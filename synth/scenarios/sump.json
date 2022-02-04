@@ -1,0 +1,34 @@
+{
+    "restart_log" : true,
+    "engine" : {
+        "type" : "sim",
+        "start_time" : "-P14D",
+        "end_time" : "now"
+    },
+    "events" : [
+        {
+            "repeats" : 10,
+            "action": { "create_device" : {
+                    "functions" : {
+                        "firmware" : {},
+                        "latlong" : { "generate_addresses" : true, "area_centre" : "Nijmegen, Holland", "area_radius" : "Arnhem, Holland" },
+                        "weather" : {},
+                        "pump" : {}
+                    }
+                }
+            }
+        },
+        {
+            "repeats" : 10,
+            "action": { "create_device" : {
+                    "functions" : {
+                        "firmware" : {},
+                        "latlong" : { "generate_addresses" : true, "area_centre" : "Cardiff, UK", "area_radius" : "Newport, Wales, UK" },
+                        "weather" : {},
+                        "pump" : {}
+                    }
+                }
+            }
+        }
+    ]
+}

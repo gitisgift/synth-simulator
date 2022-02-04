@@ -1,0 +1,16 @@
+isodate
+requests
+zmq
+flask
+numpy
+pytz
+flask_cors
+pillow
+boto3
+pytest
+mock
+pytest_mock
+requests_mock
+pendulum
+plotly
+simplejson

@@ -1,0 +1,39 @@
+{
+    "restart_log" : true,
+    "engine" : {
+        "type" : "sim",
+        "start_time" : "now",
+        "end_time" : "PT10S"
+    },
+    "events" : [
+        {
+            "at" : "PT0S",
+            "repeats" : 10,
+            "interval" : "PT1S",
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "battery" : {
+                            "life_mu" : "PT1M",
+                            "life_sigma" : "PT0M",
+                            "autoreplace" : false
+                        },
+                        "names" : {},
+                        "firmware" : {},
+                        "weather" : {},
+                        "variable" : [
+                            { "name" : "demo", "value" : "BMS" },
+                            { "name" : "device_type", "value" : "weather_sensor" },
+                            { "name" : "latitude" , "value" : 37.386051}, { "name" : "longitude", "value" : -122.083855}
+                        ],
+                        
+                        "comms" : {
+                            "reliability" : 0.1,
+                            "period" : "PT1H"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+// Test DP's old and new notification mechanisms
+{ 
+    "restart_log" : true,
+    "engine" : {
+        "type" : "sim",
+        "start_time" : "now",
+        "end_time" : null
+    },
+    "events" : [
+        {
+            "at" : "PT0S",
+            "repeats" : 300,
+            "interval" : "PT1S",
+            "comment" : "A device with periodic comms outages",
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "variable" : {
+                            "name" : "count",
+                            "timefunction" : {
+                                "count" : {
+                                    "interval" : "PT1M"
+                                }
+                            }
+                        },
+                        "commswave" : {
+                            "timefunction" : {
+                                "pulsewave" : {
+                                    "interval" : "PT20M",
+                                    "transition" : "PT10M",
+                                    "invert" : true,
+                                    "comment" : "Send heartbeats for a while, then timeout (repeat)"
+                                }
+                            }
+                        },
+                        "expect" : {
+                            "event_name" : "notifyTimeout",
+                            "timefunction" : {
+                                "pulsewave" : {
+                                    "interval" : "PT20M",
+                                    "transition" : "PT10M",
+                                    "comment" : "Expect a timeout"
+                                }
+                            },
+                            // "ignore_start" : "PT4M",
+                            "required_score_percent" : 100
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "at" : "PT0S",
+            "comment" : "A device that's always posting, to keep DP now() moving forwards",
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "heartbeat" : {
+                            "interval" : "PT1M"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

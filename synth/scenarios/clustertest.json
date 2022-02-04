@@ -1,0 +1,135 @@
+{
+	"comment" : "3x 1% reliable devices, 3x 50% reliable devices, 3x 100% reliable devices",
+    "restart_log" : true,
+    "engine" :
+    {
+        "type" : "sim",
+        "start_time" : "-PT1000M",
+        "end_time" : "now"
+    },
+    "events" : [
+        {
+            "at" : "PT0S",
+            "repeats" : 3,
+            "interval" : "PT0H",
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "heartbeat" : {
+                            "interval" : "PT1M"
+                        },
+                        "commswave" : {
+                            "timefunction" : {
+                                "pulsewave" : {
+                                    "interval" : "PT100M",
+                                    "transition": "PT1M",
+                                    "invert" : true
+                                }
+                            }
+                        },
+                        "variable" : [
+                            {
+             	            	"name" : "cluster",
+                           		"value" : 1
+                     		},
+                            {
+                            	"name" : "count",
+                       			"timefunction" : {
+                                	"count" : {
+                                    	"interval" : "PT1M"
+                                	}
+                                }
+                            },
+                           	{
+                           		"name" : "comment",
+                           		"value" : "Cluster 1 : 1% reliable"
+                           	}
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "at" : "PT0S",
+            "repeats" : 3,
+            "interval" : "PT0H",
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "heartbeat" : {
+                            "interval" : "PT1M"
+                        },
+                        "commswave" : {
+                            "timefunction" : {
+                                "pulsewave" : {
+                                    "interval" : "PT100M",
+                                    "transition": "PT50M",
+                                    "invert" : true
+                                }
+                            }
+                        },
+                        "variable" : [
+                            {
+                            	"name" : "cluster",
+                           		"value" : 2
+                           	},
+                            {
+                            	"name" : "count",
+                       			"timefunction" : {
+                                	"count" : {
+                                    	"interval" : "PT1M"
+                                	}
+                                }
+                            },
+                           	{
+                           		"name" : "comment",
+                           		"value" : "Cluster 2 : 50% reliable"
+                           	}
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "at" : "PT0S",
+            "repeats" : 3,
+            "interval" : "PT0H",
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "heartbeat" : {
+                            "interval" : "PT1M"
+                        },
+                        "commswave" : {
+                            "timefunction" : {
+                                "pulsewave" : {
+                                    "interval" : "PT100M",
+                                    "transition": "PT100M",
+                                    "invert" : true
+                                }
+                            }
+                        },
+                        "variable" : [
+                            {
+                            	"name" : "cluster",
+                           		"value" : 3
+                           	},
+                            {
+                            	"name" : "count",
+                       			"timefunction" : {
+                                	"count" : {
+                                    	"interval" : "PT1M"
+                                	}
+                                }
+                            },
+                           	{
+                           		"name" : "comment",
+                           		"value" : "Cluster 3 : 100% reliable"
+                           	}
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

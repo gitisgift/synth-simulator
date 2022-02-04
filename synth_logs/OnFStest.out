@@ -1,0 +1,3001 @@
+1970-01-01 00:00:00,463 INFO *** Synth starting at real time 2022-02-04 12:05:51.463111 ***
+1970-01-01 00:00:00,465 INFO Parameters:
+{
+    "client": {
+        "filename": "OnFStest",
+        "type": "filesystem"
+    },
+    "engine": {
+        "end_time": null,
+        "start_time": "-P14D",
+        "type": "sim"
+    },
+    "events": [
+        {
+            "action": {
+                "create_device": {
+                    "functions": {
+                        "basic": {
+                            "label_root": "Smoke Detector "
+                        },
+                        "battery": {
+                            "autoreplace": true,
+                            "autoreplace_delay": "P14D",
+                            "life_mu": "P360D",
+                            "life_sigma": "P120D"
+                        },
+                        "comms": {
+                            "period": "PT1H",
+                            "reliability": "rssi",
+                            "suppress_messages": true
+                        },
+                        "enumerated": {
+                            "name": "event",
+                            "periods": [
+                                "PT1H",
+                                "P30D",
+                                "P20D",
+                                "P20D",
+                                "P15D",
+                                "P60D",
+                                "P100D",
+                                "P20D",
+                                "P50D",
+                                "P23D",
+                                "P50D"
+                            ],
+                            "sigmas": [
+                                "PT0S",
+                                "P10D",
+                                "P8D",
+                                "P8D",
+                                "P5D",
+                                "P20D",
+                                "P33D",
+                                "P8D",
+                                "P18D",
+                                "P8D",
+                                "P18D"
+                            ],
+                            "values": [
+                                "heartbeat",
+                                "alarm",
+                                "battery low",
+                                "mains loss",
+                                "cover removed",
+                                "hardware fault",
+                                "calibration error",
+                                "sensor needs cleaning",
+                                "internal fault",
+                                "link interference",
+                                "over-temperature"
+                            ]
+                        },
+                        "variable": [
+                            {
+                                "name": "demo",
+                                "value": "BMS"
+                            },
+                            {
+                                "name": "device_type",
+                                "value": "smoke_alarm"
+                            },
+                            {
+                                "name": "hardware_version",
+                                "value": [
+                                    0.4,
+                                    0.6,
+                                    0.9,
+                                    1.1,
+                                    1.5
+                                ]
+                            },
+                            {
+                                "name": "$x",
+                                "value": [
+                                    1000,
+                                    1500,
+                                    2000,
+                                    2500,
+                                    3000,
+                                    3500,
+                                    4000,
+                                    4500,
+                                    5000,
+                                    5500,
+                                    6000,
+                                    6500
+                                ]
+                            },
+                            {
+                                "name": "$y",
+                                "value": [
+                                    1000,
+                                    1250,
+                                    1500,
+                                    1750,
+                                    2000,
+                                    2250,
+                                    2500,
+                                    2750,
+                                    3000
+                                ]
+                            },
+                            {
+                                "name": "latitude",
+                                "value": 37.386051
+                            },
+                            {
+                                "name": "longitude",
+                                "value": -122.083855
+                            }
+                        ]
+                    }
+                }
+            },
+            "comment": "Smoke detectors",
+            "repeats": 50
+        },
+        {
+            "action": {
+                "create_device": {
+                    "functions": {
+                        "light": {
+                            "clouds": true,
+                            "generate": true
+                        },
+                        "variable": [
+                            {
+                                "name": "demo",
+                                "value": "BMS"
+                            },
+                            {
+                                "name": "device_type",
+                                "value": "pv_array"
+                            },
+                            {
+                                "name": "latitude",
+                                "value": 37.386051
+                            },
+                            {
+                                "name": "longitude",
+                                "value": -122.083855
+                            }
+                        ]
+                    }
+                }
+            },
+            "comment": "PV array",
+            "repeats": 8
+        },
+        {
+            "action": {
+                "create_device": {
+                    "functions": {
+                        "variable": [
+                            {
+                                "name": "demo",
+                                "value": "BMS"
+                            },
+                            {
+                                "name": "device_type",
+                                "value": "weather_sensor"
+                            },
+                            {
+                                "name": "latitude",
+                                "value": 37.386051
+                            },
+                            {
+                                "name": "longitude",
+                                "value": -122.083855
+                            }
+                        ],
+                        "weather": {}
+                    }
+                }
+            },
+            "comment": "Weather sensor",
+            "repeats": 1
+        },
+        {
+            "action": {
+                "create_device": {
+                    "functions": {
+                        "bulb": {
+                            "power": [
+                                12,
+                                20,
+                                36
+                            ]
+                        },
+                        "variable": [
+                            {
+                                "name": "demo",
+                                "value": "BMS"
+                            },
+                            {
+                                "name": "device_type",
+                                "value": "bulb"
+                            },
+                            {
+                                "name": "$x",
+                                "value": [
+                                    100,
+                                    150,
+                                    200,
+                                    250,
+                                    300,
+                                    350,
+                                    400,
+                                    450,
+                                    500,
+                                    550,
+                                    600,
+                                    650
+                                ]
+                            },
+                            {
+                                "name": "$y",
+                                "value": [
+                                    100,
+                                    125,
+                                    150,
+                                    175,
+                                    200,
+                                    225,
+                                    250,
+                                    275,
+                                    300
+                                ]
+                            },
+                            {
+                                "name": "latitude",
+                                "value": 37.386051
+                            },
+                            {
+                                "name": "longitude",
+                                "value": -122.083855
+                            }
+                        ]
+                    }
+                }
+            },
+            "comment": "light bulbs",
+            "repeats": 10
+        },
+        {
+            "action": {
+                "use_model": [
+                    {
+                        "comment": "x,y coordinates in first site match this floorplan: https://mir-s3-cdn-cf.behance.net/project_modules/fs/284b1728142003.563704a2ac3db.jpg"
+                    },
+                    {
+                        "hierarchy": "customer/site/floor/zone"
+                    },
+                    {
+                        "model": {},
+                        "properties": {
+                            "demo": "energy in buildings"
+                        }
+                    },
+                    {
+                        "functions": [
+                            "opening_hours"
+                        ],
+                        "model": {
+                            "customer": "EllisDon"
+                        }
+                    },
+                    {
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "Forest Hill"
+                        },
+                        "properties": {
+                            "address": "Upper Canada College, Forest Hill, Toronto, ON M4V 1W6, Canada",
+                            "latitude": 43.693309,
+                            "longitude": -79.403761,
+                            "square_metres": 2000
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            },
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "error",
+                                    "periods": [
+                                        "PT48H",
+                                        "P10D",
+                                        "P20D",
+                                        "P50D",
+                                        "P10D",
+                                        "P15D",
+                                        "P20D",
+                                        "P10D"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "P5D",
+                                        "P10D",
+                                        "P20D",
+                                        "P5D",
+                                        "P5D",
+                                        "P10D",
+                                        "P5D"
+                                    ],
+                                    "values": [
+                                        "no error",
+                                        "sensor failure",
+                                        "compressor failure",
+                                        "electrical failure",
+                                        "fan failure",
+                                        "heat and cool overlap",
+                                        "hardware fault",
+                                        "comms failure"
+                                    ]
+                                },
+                                "hvac": {
+                                    "kWh_per_degree_day": 2000,
+                                    "opening_times": "nine_to_five"
+                                },
+                                "variable": {
+                                    "name": "hvac_discharge_pressure",
+                                    "timefunction": {
+                                        "randomwave": {
+                                            "period": "PT24H"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "variable": [
+                                    {
+                                        "name": "device_type",
+                                        "value": "hot_water"
+                                    },
+                                    {
+                                        "name": "water_temp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 58,
+                                                "period": [
+                                                    "PT7M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT23M",
+                                                    "PT37M",
+                                                    "PT3H",
+                                                    "PT13H",
+                                                    "PT27H",
+                                                    "P3D",
+                                                    "P7D",
+                                                    "P13D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_SupWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 68,
+                                                "period": [
+                                                    "PT5M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT29M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT17H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P19D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_RetWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 55,
+                                                "period": [
+                                                    "PT3M",
+                                                    "PT17M",
+                                                    "PT19M",
+                                                    "PT37M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT19H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P23D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "Forest Hill"
+                        }
+                    },
+                    {
+                        "count": 5,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "max_occupancy": 0.8,
+                                    "opening_times": "nine_to_five"
+                                },
+                                "variable": [
+                                    {
+                                        "name": "$x",
+                                        "series": [
+                                            805,
+                                            832,
+                                            600,
+                                            808,
+                                            820
+                                        ]
+                                    },
+                                    {
+                                        "name": "$y",
+                                        "series": [
+                                            697,
+                                            154,
+                                            793,
+                                            630,
+                                            485
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "Forest Hill",
+                            "zone": "Admin"
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "co2": {}
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "Forest Hill",
+                            "zone": "Admin"
+                        }
+                    },
+                    {
+                        "count": 3,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {},
+                                "variable": [
+                                    {
+                                        "name": "$x",
+                                        "series": [
+                                            1168,
+                                            814,
+                                            1099
+                                        ]
+                                    },
+                                    {
+                                        "name": "$y",
+                                        "series": [
+                                            355,
+                                            563,
+                                            610
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "Forest Hill",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {},
+                                "variable": [
+                                    {
+                                        "name": "$x",
+                                        "value": 1237
+                                    },
+                                    {
+                                        "name": "$y",
+                                        "value": 116
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "Forest Hill",
+                            "zone": "Storage"
+                        }
+                    },
+                    {
+                        "count": 3,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {},
+                                "variable": [
+                                    {
+                                        "name": "$x",
+                                        "series": [
+                                            789,
+                                            835,
+                                            831
+                                        ]
+                                    },
+                                    {
+                                        "name": "$y",
+                                        "series": [
+                                            782,
+                                            303,
+                                            399
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "First Floor",
+                            "site": "Forest Hill",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {},
+                                "variable": [
+                                    {
+                                        "name": "$x",
+                                        "value": 520
+                                    },
+                                    {
+                                        "name": "$y",
+                                        "value": 714
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "First Floor",
+                            "site": "Forest Hill",
+                            "zone": "Maintenance"
+                        }
+                    },
+                    {
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "QE Towers"
+                        },
+                        "properties": {
+                            "address": "500-530 Laurier Ave W, Ottawa, ON K1R 5E1 Canada",
+                            "latitude": 45.415543,
+                            "longitude": -75.705613,
+                            "square_metres": 1500
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            },
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "error",
+                                    "periods": [
+                                        "PT48H",
+                                        "P10D",
+                                        "P20D",
+                                        "P50D",
+                                        "P10D",
+                                        "P15D",
+                                        "P20D",
+                                        "P10D"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "P5D",
+                                        "P10D",
+                                        "P20D",
+                                        "P5D",
+                                        "P5D",
+                                        "P10D",
+                                        "P5D"
+                                    ],
+                                    "values": [
+                                        "no error",
+                                        "sensor failure",
+                                        "compressor failure",
+                                        "electrical failure",
+                                        "fan failure",
+                                        "heat and cool overlap",
+                                        "hardware fault",
+                                        "comms failure"
+                                    ]
+                                },
+                                "hvac": {
+                                    "kWh_per_degree_day": 1500,
+                                    "opening_times": "eight_to_six"
+                                },
+                                "variable": {
+                                    "name": "hvac_discharge_pressure",
+                                    "timefunction": {
+                                        "randomwave": {
+                                            "period": "PT24H"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "variable": [
+                                    {
+                                        "name": "device_type",
+                                        "value": "hot_water"
+                                    },
+                                    {
+                                        "name": "water_temp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 58,
+                                                "period": [
+                                                    "PT7M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT23M",
+                                                    "PT37M",
+                                                    "PT3H",
+                                                    "PT13H",
+                                                    "PT27H",
+                                                    "P3D",
+                                                    "P7D",
+                                                    "P13D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_SupWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 68,
+                                                "period": [
+                                                    "PT5M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT29M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT17H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P19D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_RetWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 55,
+                                                "period": [
+                                                    "PT3M",
+                                                    "PT17M",
+                                                    "PT19M",
+                                                    "PT37M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT19H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P23D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "QE Towers"
+                        }
+                    },
+                    {
+                        "count": 3,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "opening_times": "nine_to_five"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "QE Towers",
+                            "zone": "Office"
+                        }
+                    },
+                    {
+                        "count": 8,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "opening_times": "nine_to_five"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "QE Towers",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "count": 5,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "opening_times": "nine_to_five"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "First Floor",
+                            "site": "QE Towers",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "The Strand"
+                        },
+                        "properties": {
+                            "address": "429 Somerset St W, Ottawa, ON K2P 2P5, Canada",
+                            "latitude": 45.414789,
+                            "longitude": -75.698491,
+                            "square_metres": 3500
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            },
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "error",
+                                    "periods": [
+                                        "PT48H",
+                                        "P10D",
+                                        "P20D",
+                                        "P50D",
+                                        "P10D",
+                                        "P15D",
+                                        "P20D",
+                                        "P10D"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "P5D",
+                                        "P10D",
+                                        "P20D",
+                                        "P5D",
+                                        "P5D",
+                                        "P10D",
+                                        "P5D"
+                                    ],
+                                    "values": [
+                                        "no error",
+                                        "sensor failure",
+                                        "compressor failure",
+                                        "electrical failure",
+                                        "fan failure",
+                                        "heat and cool overlap",
+                                        "hardware fault",
+                                        "comms failure"
+                                    ]
+                                },
+                                "hvac": {
+                                    "kWh_per_degree_day": 3500,
+                                    "occupied_target_temp_max": 24,
+                                    "occupied_target_temp_min": 22,
+                                    "opening_times": "six_day"
+                                },
+                                "variable": {
+                                    "name": "hvac_discharge_pressure",
+                                    "timefunction": {
+                                        "randomwave": {
+                                            "period": "PT24H"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "The Strand"
+                        }
+                    },
+                    {
+                        "count": 6,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "opening_times": "six_day"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "The Strand",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "count": 5,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "opening_times": "six_day"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "First Floor",
+                            "site": "The Strand",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "count": 3,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "opening_times": "six_day"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Second Floor",
+                            "site": "The Strand",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "opening_times": "nine_to_five"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Second Floor",
+                            "site": "The Strand",
+                            "zone": "Admin"
+                        }
+                    },
+                    {
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "Mix Condos"
+                        },
+                        "properties": {
+                            "address": "10 Hill Grove Point, Winnipeg, MB R3Y 1G5, Canada",
+                            "latitude": 49.79878,
+                            "longitude": -97.193544,
+                            "square_metres": 1200
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            },
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "error",
+                                    "periods": [
+                                        "PT48H",
+                                        "P10D",
+                                        "P20D",
+                                        "P50D",
+                                        "P10D",
+                                        "P15D",
+                                        "P20D",
+                                        "P10D"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "P5D",
+                                        "P10D",
+                                        "P20D",
+                                        "P5D",
+                                        "P5D",
+                                        "P10D",
+                                        "P5D"
+                                    ],
+                                    "values": [
+                                        "no error",
+                                        "sensor failure",
+                                        "compressor failure",
+                                        "electrical failure",
+                                        "fan failure",
+                                        "heat and cool overlap",
+                                        "hardware fault",
+                                        "comms failure"
+                                    ]
+                                },
+                                "hvac": {
+                                    "kWh_per_degree_day": 1000,
+                                    "opening_times": "nine_to_five"
+                                },
+                                "variable": {
+                                    "name": "hvac_discharge_pressure",
+                                    "timefunction": {
+                                        "randomwave": {
+                                            "period": "PT24H"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "variable": [
+                                    {
+                                        "name": "device_type",
+                                        "value": "hot_water"
+                                    },
+                                    {
+                                        "name": "water_temp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 58,
+                                                "period": [
+                                                    "PT7M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT23M",
+                                                    "PT37M",
+                                                    "PT3H",
+                                                    "PT13H",
+                                                    "PT27H",
+                                                    "P3D",
+                                                    "P7D",
+                                                    "P13D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_SupWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 68,
+                                                "period": [
+                                                    "PT5M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT29M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT17H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P19D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_RetWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 55,
+                                                "period": [
+                                                    "PT3M",
+                                                    "PT17M",
+                                                    "PT19M",
+                                                    "PT37M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT19H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P23D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "Mix Condos"
+                        }
+                    },
+                    {
+                        "count": 3,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "peak_occupancy": 0.8
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "Mix Condos",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "The Theodore"
+                        },
+                        "properties": {
+                            "address": "101, 227 10 St NW, Calgary, AB T2N 1V5, Canada",
+                            "latitude": 51.05398,
+                            "longitude": -114.086394,
+                            "square_metres": 300
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            },
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "error",
+                                    "periods": [
+                                        "PT48H",
+                                        "P10D",
+                                        "P20D",
+                                        "P50D",
+                                        "P10D",
+                                        "P15D",
+                                        "P20D",
+                                        "P10D"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "P5D",
+                                        "P10D",
+                                        "P20D",
+                                        "P5D",
+                                        "P5D",
+                                        "P10D",
+                                        "P5D"
+                                    ],
+                                    "values": [
+                                        "no error",
+                                        "sensor failure",
+                                        "compressor failure",
+                                        "electrical failure",
+                                        "fan failure",
+                                        "heat and cool overlap",
+                                        "hardware fault",
+                                        "comms failure"
+                                    ]
+                                },
+                                "hvac": {
+                                    "kWh_per_degree_day": 500,
+                                    "opening_times": "nine_to_five"
+                                },
+                                "variable": {
+                                    "name": "hvac_discharge_pressure",
+                                    "timefunction": {
+                                        "randomwave": {
+                                            "period": "PT24H"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "variable": [
+                                    {
+                                        "name": "device_type",
+                                        "value": "hot_water"
+                                    },
+                                    {
+                                        "name": "water_temp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 58,
+                                                "period": [
+                                                    "PT7M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT23M",
+                                                    "PT37M",
+                                                    "PT3H",
+                                                    "PT13H",
+                                                    "PT27H",
+                                                    "P3D",
+                                                    "P7D",
+                                                    "P13D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_SupWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 68,
+                                                "period": [
+                                                    "PT5M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT29M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT17H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P19D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_RetWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 55,
+                                                "period": [
+                                                    "PT3M",
+                                                    "PT17M",
+                                                    "PT19M",
+                                                    "PT37M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT19H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P23D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "The Theodore"
+                        }
+                    },
+                    {
+                        "count": 2,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {
+                                    "peak_occupancy": 0.7
+                                }
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "The Theodore",
+                            "zone": "Retail"
+                        }
+                    },
+                    {
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "Olympic Village"
+                        },
+                        "properties": {
+                            "address": "Salt St, Vancouver, BC V5Y 0E4, Canada",
+                            "latitude": 49.271475,
+                            "longitude": -123.106204,
+                            "square_metres": 1900
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            },
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "error",
+                                    "periods": [
+                                        "PT48H",
+                                        "P10D",
+                                        "P20D",
+                                        "P50D",
+                                        "P10D",
+                                        "P15D",
+                                        "P20D",
+                                        "P10D"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "P5D",
+                                        "P10D",
+                                        "P20D",
+                                        "P5D",
+                                        "P5D",
+                                        "P10D",
+                                        "P5D"
+                                    ],
+                                    "values": [
+                                        "no error",
+                                        "sensor failure",
+                                        "compressor failure",
+                                        "electrical failure",
+                                        "fan failure",
+                                        "heat and cool overlap",
+                                        "hardware fault",
+                                        "comms failure"
+                                    ]
+                                },
+                                "hvac": {
+                                    "hvac_reliability": 0.9,
+                                    "kWh_per_degree_day": 1000,
+                                    "opening_times": "seven_day"
+                                },
+                                "variable": {
+                                    "name": "hvac_discharge_pressure",
+                                    "timefunction": {
+                                        "randomwave": {
+                                            "period": "PT24H"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "variable": [
+                                    {
+                                        "name": "device_type",
+                                        "value": "hot_water"
+                                    },
+                                    {
+                                        "name": "water_temp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 58,
+                                                "period": [
+                                                    "PT7M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT23M",
+                                                    "PT37M",
+                                                    "PT3H",
+                                                    "PT13H",
+                                                    "PT27H",
+                                                    "P3D",
+                                                    "P7D",
+                                                    "P13D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_SupWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 68,
+                                                "period": [
+                                                    "PT5M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT29M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT17H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P19D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_RetWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 55,
+                                                "period": [
+                                                    "PT3M",
+                                                    "PT17M",
+                                                    "PT19M",
+                                                    "PT37M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT19H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P23D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "site": "Olympic Village"
+                        }
+                    },
+                    {
+                        "count": 2,
+                        "devices": [
+                            {
+                                "co2": {},
+                                "occupancy": {}
+                            }
+                        ],
+                        "model": {
+                            "customer": "EllisDon",
+                            "floor": "Ground Floor",
+                            "site": "Olympic Village",
+                            "zone": "Retail"
+                        }
+                    }
+                ]
+            },
+            "comment": "energy and occupancy in retail buildings"
+        },
+        {
+            "action": {
+                "use_model": [
+                    {
+                        "hierarchy": "site/home"
+                    },
+                    {
+                        "model": {},
+                        "properties": {
+                            "demo": "affordable_homes"
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            },
+                            {
+                                "hvac": {
+                                    "kWh_per_degree_day": 200,
+                                    "opening_times": "domestic"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "site": "Leon House"
+                        },
+                        "properties": {
+                            "address": "Leon House, Croydon, UK",
+                            "latitude": 51.369297,
+                            "longitude": -0.099033
+                        }
+                    },
+                    {
+                        "model": {
+                            "home": "Apartment #167#",
+                            "site": "Leon House"
+                        }
+                    },
+                    {
+                        "count": 16,
+                        "devices": [
+                            {
+                                "basic": {
+                                    "label_root": "Fire Door "
+                                },
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "door",
+                                    "periods": [
+                                        "P1D",
+                                        "PT1H"
+                                    ],
+                                    "sigmas": [
+                                        "P3D",
+                                        "PT8H"
+                                    ],
+                                    "values": [
+                                        "open",
+                                        "closed"
+                                    ]
+                                },
+                                "variable": {
+                                    "name": "device_type",
+                                    "value": "fire_door"
+                                }
+                            }
+                        ],
+                        "model": {
+                            "site": "Leon House"
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            }
+                        ],
+                        "model": {
+                            "site": "Cornwall"
+                        },
+                        "properties": {
+                            "address": "Bickland Water Road, Falmouth, Cornwall, UK",
+                            "latitude": 50.152019,
+                            "longitude": -5.097288
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "window",
+                                    "periods": [
+                                        "PT48H",
+                                        "PT1H"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "PT1H"
+                                    ],
+                                    "values": [
+                                        "open",
+                                        "closed"
+                                    ]
+                                },
+                                "hvac": {
+                                    "kWh_per_degree_day": 300,
+                                    "opening_times": "domestic"
+                                }
+                            },
+                            {
+                                "variable": [
+                                    {
+                                        "name": "device_type",
+                                        "value": "hot_water"
+                                    },
+                                    {
+                                        "name": "water_temp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 58,
+                                                "period": [
+                                                    "PT7M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT23M",
+                                                    "PT37M",
+                                                    "PT3H",
+                                                    "PT13H",
+                                                    "PT27H",
+                                                    "P3D",
+                                                    "P7D",
+                                                    "P13D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_SupWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 68,
+                                                "period": [
+                                                    "PT5M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT29M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT17H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P19D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_RetWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 55,
+                                                "period": [
+                                                    "PT3M",
+                                                    "PT17M",
+                                                    "PT19M",
+                                                    "PT37M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT19H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P23D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "home": "Home #44#",
+                            "site": "Cornwall"
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            }
+                        ],
+                        "model": {
+                            "site": "Dunstable"
+                        },
+                        "properties": {
+                            "address": "Phoenix Park, Church St, Dunstable, LU5 4HU, UK",
+                            "latitude": 51.888033,
+                            "longitude": -0.513375
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "window",
+                                    "periods": [
+                                        "PT48H",
+                                        "PT1H"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "PT1H"
+                                    ],
+                                    "values": [
+                                        "open",
+                                        "closed"
+                                    ]
+                                },
+                                "hvac": {
+                                    "kWh_per_degree_day": 240,
+                                    "opening_times": "domestic"
+                                }
+                            },
+                            {
+                                "variable": [
+                                    {
+                                        "name": "device_type",
+                                        "value": "hot_water"
+                                    },
+                                    {
+                                        "name": "water_temp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 58,
+                                                "period": [
+                                                    "PT7M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT23M",
+                                                    "PT37M",
+                                                    "PT3H",
+                                                    "PT13H",
+                                                    "PT27H",
+                                                    "P3D",
+                                                    "P7D",
+                                                    "P13D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_SupWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 68,
+                                                "period": [
+                                                    "PT5M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT29M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT17H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P19D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_RetWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 55,
+                                                "period": [
+                                                    "PT3M",
+                                                    "PT17M",
+                                                    "PT19M",
+                                                    "PT37M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT19H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P23D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "home": "Home #23#",
+                            "site": "Dunstable"
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "weather": {}
+                            }
+                        ],
+                        "model": {
+                            "site": "Shrivenham"
+                        },
+                        "properties": {
+                            "address": "Cross Trees Park, Highworth Rd, Shrivenham, Oxfordshire, SN6 8BL, UK",
+                            "latitude": 51.600697,
+                            "longitude": -1.660247
+                        }
+                    },
+                    {
+                        "devices": [
+                            {
+                                "enumerated": {
+                                    "always_send": false,
+                                    "name": "window",
+                                    "periods": [
+                                        "PT48H",
+                                        "PT1H"
+                                    ],
+                                    "sigmas": [
+                                        "PT24H",
+                                        "PT1H"
+                                    ],
+                                    "values": [
+                                        "open",
+                                        "closed"
+                                    ]
+                                },
+                                "hvac": {
+                                    "kWh_per_degree_day": 270,
+                                    "opening_times": "domestic"
+                                }
+                            },
+                            {
+                                "comms": {
+                                    "period": "P1D",
+                                    "reliability": 0.9
+                                },
+                                "variable": [
+                                    {
+                                        "name": "device_type",
+                                        "value": "hot_water"
+                                    },
+                                    {
+                                        "name": "water_temp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 58,
+                                                "period": [
+                                                    "PT7M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT23M",
+                                                    "PT37M",
+                                                    "PT3H",
+                                                    "PT13H",
+                                                    "PT27H",
+                                                    "P3D",
+                                                    "P7D",
+                                                    "P13D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_SupWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 68,
+                                                "period": [
+                                                    "PT5M",
+                                                    "PT13M",
+                                                    "PT17M",
+                                                    "PT29M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT17H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P19D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "HWS_RetWtrTemp",
+                                        "timefunction": {
+                                            "sinewave": {
+                                                "overall_amplitude": 20.0,
+                                                "overall_offset": 55,
+                                                "period": [
+                                                    "PT3M",
+                                                    "PT17M",
+                                                    "PT19M",
+                                                    "PT37M",
+                                                    "PT39M",
+                                                    "PT5H",
+                                                    "PT19H",
+                                                    "PT29H",
+                                                    "P5D",
+                                                    "P9D",
+                                                    "P23D"
+                                                ],
+                                                "precision": 1,
+                                                "randomise_phase_by": "$id",
+                                                "sample_period": "PT1H"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "model": {
+                            "home": "Home #161#",
+                            "site": "Shrivenham"
+                        }
+                    }
+                ]
+            },
+            "comment": "affordable homes"
+        }
+    ],
+    "restart_log": true
+}
+1970-01-01 00:00:00,512 INFO Loading clients.filesystem
+1970-01-01 00:00:00,520 INFO write_csv is True
+1970-01-01 00:00:00,520 INFO Loading engines.sim
+2022-01-21 06:35:51,554 INFO Starting ZeroMQ rx thread
+2022-01-21 06:35:51,555 INFO ZeroMQ rx thread started
+2022-01-21 06:35:51,555 INFO Simulation starts
+2022-01-21 06:35:51,557 INFO Defining new device class ['basic', 'battery', 'comms', 'enumerated', 'variable']
+2022-01-21 06:35:51,557 INFO Loading devices.battery
+2022-01-21 06:35:51,560 INFO Loading devices.comms
+2022-01-21 06:35:51,953 INFO Loading devices.enumerated
+2022-01-21 06:35:51,955 INFO Loading devices.variable
+2022-01-21 06:35:51,956 INFO Starting new logfile OnFStest00001.json
+2022-01-21 06:35:51,957 INFO Created device 1 : f7-c7-70-1d-01-17
+2022-01-21 06:35:51,958 INFO Created device 2 : e9-f1-f0-ce-95-08
+2022-01-21 06:35:51,960 INFO Created device 3 : ab-b1-15-19-c4-5a
+2022-01-21 06:35:51,961 INFO Created device 4 : 3c-04-07-fc-c9-04
+2022-01-21 06:35:51,962 INFO Created device 5 : 58-a5-9f-7b-9d-76
+2022-01-21 06:35:51,963 INFO Created device 6 : 26-17-2e-b6-1d-d8
+2022-01-21 06:35:51,965 INFO Created device 7 : 03-80-7c-e1-f7-3f
+2022-01-21 06:35:51,966 INFO Created device 8 : 10-aa-8a-e9-77-11
+2022-01-21 06:35:51,967 INFO Created device 9 : 99-ac-16-83-94-0b
+2022-01-21 06:35:51,970 INFO Created device 10 : 45-d3-8e-10-a5-4d
+2022-01-21 06:35:51,973 INFO Created device 11 : 7b-d9-5a-44-3f-a7
+2022-01-21 06:35:51,976 INFO Created device 12 : ee-33-74-e0-87-aa
+2022-01-21 06:35:51,980 INFO Created device 13 : 04-f1-82-12-01-55
+2022-01-21 06:35:51,984 INFO Created device 14 : 24-b5-79-a8-60-2a
+2022-01-21 06:35:51,988 INFO Created device 15 : 0d-13-96-7f-29-13
+2022-01-21 06:35:51,990 INFO Created device 16 : 8e-37-24-06-ef-58
+2022-01-21 06:35:51,992 INFO Created device 17 : c5-1c-f4-87-24-ab
+2022-01-21 06:35:51,994 INFO Created device 18 : 4e-74-0a-6a-46-a9
+2022-01-21 06:35:51,996 INFO Created device 19 : ce-0a-2d-45-27-4c
+2022-01-21 06:35:51,997 INFO Created device 20 : f4-d8-27-c7-d5-76
+2022-01-21 06:35:51,998 INFO Created device 21 : 0a-90-62-c3-59-7e
+2022-01-21 06:35:51,999 INFO Created device 22 : 57-95-d1-77-79-0b
+2022-01-21 06:35:51,001 INFO Created device 23 : c8-ee-78-de-d1-98
+2022-01-21 06:35:51,003 INFO Created device 24 : e1-2b-70-bb-c7-84
+2022-01-21 06:35:51,006 INFO Created device 25 : d0-70-4b-46-1f-c7
+2022-01-21 06:35:51,007 INFO Created device 26 : 2f-6a-6f-c4-1e-f0
+2022-01-21 06:35:51,009 INFO Created device 27 : 87-1a-d4-d7-7c-60
+2022-01-21 06:35:51,011 INFO Created device 28 : d1-d1-a8-41-a4-31
+2022-01-21 06:35:51,012 INFO Created device 29 : 58-1b-b3-b3-cf-f6
+2022-01-21 06:35:51,014 INFO Created device 30 : 28-94-e8-f1-44-f8
+2022-01-21 06:35:51,016 INFO Created device 31 : 27-d9-d7-fb-b8-52
+2022-01-21 06:35:51,017 INFO Created device 32 : cb-c9-72-b8-12-14
+2022-01-21 06:35:51,018 INFO Created device 33 : 65-36-0c-e5-49-cd
+2022-01-21 06:35:51,019 INFO Created device 34 : 09-38-81-d4-16-ca
+2022-01-21 06:35:51,020 INFO Created device 35 : ee-f0-b3-51-4e-f1
+2022-01-21 06:35:51,021 INFO Created device 36 : 75-10-95-41-db-12
+2022-01-21 06:35:51,022 INFO Created device 37 : b0-6d-f3-33-19-65
+2022-01-21 06:35:51,023 INFO Created device 38 : 31-b4-e2-e3-75-80
+2022-01-21 06:35:51,024 INFO Created device 39 : 3c-d1-cc-5c-ee-db
+2022-01-21 06:35:51,026 INFO Created device 40 : 34-83-e3-b3-6b-2c
+2022-01-21 06:35:51,030 INFO Created device 41 : f3-95-34-4d-0f-d0
+2022-01-21 06:35:51,031 INFO Created device 42 : 5a-88-27-7f-e8-c5
+2022-01-21 06:35:51,033 INFO Created device 43 : f3-8c-78-55-23-21
+2022-01-21 06:35:51,035 INFO Created device 44 : 0c-9f-2a-ec-25-d7
+2022-01-21 06:35:51,036 INFO Created device 45 : 8b-11-b6-53-2b-00
+2022-01-21 06:35:51,037 INFO Created device 46 : ab-ac-0f-a3-16-c2
+2022-01-21 06:35:51,038 INFO Created device 47 : ca-25-ea-37-0a-6e
+2022-01-21 06:35:51,039 INFO Created device 48 : 64-bc-53-35-f8-d2
+2022-01-21 06:35:51,040 INFO Created device 49 : ac-61-ef-df-ea-f5
+2022-01-21 06:35:51,041 INFO Created device 50 : 47-89-a1-eb-4d-6c
+2022-01-21 06:35:51,043 INFO Defining new device class ['light', 'variable']
+2022-01-21 06:35:51,043 INFO Loading devices.light
+2022-01-21 06:35:51,049 INFO Created device 51 : 51-af-93-d8-26-d6
+2022-01-21 06:35:51,050 INFO Created device 52 : 88-17-c3-42-47-69
+2022-01-21 06:35:51,051 INFO Created device 53 : 66-db-90-46-86-1d
+2022-01-21 06:35:51,052 INFO Created device 54 : b3-60-46-36-4c-b7
+2022-01-21 06:35:51,052 INFO Created device 55 : d6-96-65-0d-59-e0
+2022-01-21 06:35:51,053 INFO Created device 56 : d5-70-3b-c6-7d-2a
+2022-01-21 06:35:51,054 INFO Created device 57 : 61-4e-00-12-7a-65
+2022-01-21 06:35:51,054 INFO Created device 58 : 4c-6d-d7-ae-d3-7a
+2022-01-21 06:35:51,055 INFO Defining new device class ['variable', 'weather']
+2022-01-21 06:35:51,055 INFO Loading devices.weather
+2022-01-21 06:35:51,056 INFO Powered by Dark Sky (tm)
+2022-01-21 06:35:51,057 WARNING No existing Dark Sky cache
+2022-01-21 06:35:51,057 ERROR Can't open Dark Sky key file
+2022-01-21 06:35:51,058 INFO Created device 59 : 2f-66-a0-7a-28-48
+2022-01-21 06:35:51,059 INFO Defining new device class ['bulb', 'variable']
+2022-01-21 06:35:51,061 INFO Loading devices.bulb
+2022-01-21 06:35:51,062 INFO Created device 60 : 97-5e-a7-99-58-34
+2022-01-21 06:35:51,063 INFO Created device 61 : 2b-84-ed-91-75-cd
+2022-01-21 06:35:51,064 INFO Created device 62 : ab-79-a8-07-cd-cb
+2022-01-21 06:35:51,065 INFO Created device 63 : b9-77-a9-cc-1a-06
+2022-01-21 06:35:51,066 INFO Created device 64 : 5d-f8-cb-79-10-ea
+2022-01-21 06:35:51,067 INFO Created device 65 : 23-e3-e7-e5-96-54
+2022-01-21 06:35:51,067 INFO Created device 66 : fa-59-c0-c0-fe-4a
+2022-01-21 06:35:51,068 INFO Created device 67 : 4c-ae-af-95-54-90
+2022-01-21 06:35:51,069 INFO Created device 68 : f2-f3-4b-90-31-82
+2022-01-21 06:35:51,070 INFO Created device 69 : d0-bf-47-12-88-b1
+2022-01-21 06:35:51,070 INFO Defining new device class ['weather']
+2022-01-21 06:35:51,071 INFO Created device 70 : 9a-34-56-82-55-e9
+2022-01-21 06:35:51,071 INFO Defining new device class ['enumerated', 'hvac', 'variable']
+2022-01-21 06:35:51,071 INFO Loading devices.hvac
+2022-01-21 06:35:51,074 INFO Created device 71 : 52-75-44-15-c2-86
+2022-01-21 06:35:51,074 INFO Loading timefunctions.randomwave
+2022-01-21 06:35:51,076 INFO Defining new device class ['variable']
+2022-01-21 06:35:51,077 INFO Created device 72 : 96-95-8c-1e-d2-3e
+2022-01-21 06:35:51,077 INFO Loading timefunctions.sinewave
+2022-01-21 06:35:51,079 INFO Defining new device class ['co2', 'occupancy', 'variable']
+2022-01-21 06:35:51,079 INFO Loading devices.co2
+2022-01-21 06:35:51,081 INFO Loading devices.occupancy
+2022-01-21 06:35:51,083 INFO Created device 73 : 41-5f-23-de-07-65
+2022-01-21 06:35:51,083 INFO Created device 74 : 09-aa-fd-0b-f9-35
+2022-01-21 06:35:51,084 INFO Created device 75 : aa-27-fd-50-84-5a
+2022-01-21 06:35:51,084 INFO Created device 76 : 6f-e8-83-e8-11-d8
+2022-01-21 06:35:51,084 INFO Created device 77 : c2-f5-4e-42-b2-7c
+2022-01-21 06:35:51,085 INFO Defining new device class ['co2']
+2022-01-21 06:35:51,085 INFO Created device 78 : e8-94-38-59-81-15
+2022-01-21 06:35:51,085 INFO Created device 79 : a7-e9-cf-04-ae-95
+2022-01-21 06:35:51,085 INFO Created device 80 : 54-dc-90-3a-29-7a
+2022-01-21 06:35:51,086 INFO Created device 81 : 7f-af-f0-ac-f3-fd
+2022-01-21 06:35:51,086 INFO Created device 82 : 23-e0-88-9f-9e-11
+2022-01-21 06:35:51,086 INFO Created device 83 : 25-88-f2-d6-3e-b0
+2022-01-21 06:35:51,087 INFO Created device 84 : 2a-e9-81-c1-81-b0
+2022-01-21 06:35:51,087 INFO Created device 85 : c6-64-da-d6-53-21
+2022-01-21 06:35:51,087 INFO Created device 86 : b5-8f-90-88-9c-99
+2022-01-21 06:35:51,088 INFO Created device 87 : d8-72-0a-5f-11-ee
+2022-01-21 06:35:51,088 INFO Created device 88 : 5e-c3-d7-ad-68-e2
+2022-01-21 06:35:51,089 INFO Created device 89 : 0b-9a-9c-12-50-3a
+2022-01-21 06:35:51,090 INFO Defining new device class ['co2', 'occupancy']
+2022-01-21 06:35:51,091 INFO Created device 90 : 9f-cd-32-58-f0-f0
+2022-01-21 06:35:51,091 INFO Created device 91 : 85-b0-c4-61-96-7e
+2022-01-21 06:35:51,091 INFO Created device 92 : fa-0d-07-72-ce-14
+2022-01-21 06:35:51,092 INFO Created device 93 : d4-4b-6d-ed-57-25
+2022-01-21 06:35:51,092 INFO Created device 94 : 7c-ad-c1-a6-3d-b1
+2022-01-21 06:35:51,093 INFO Created device 95 : fb-cb-07-dd-bc-5b
+2022-01-21 06:35:51,093 INFO Created device 96 : 97-5f-6a-2c-13-a3
+2022-01-21 06:35:51,093 INFO Created device 97 : 04-36-c6-32-d5-fd
+2022-01-21 06:35:51,094 INFO Created device 98 : 9a-9e-8c-bb-24-80
+2022-01-21 06:35:51,094 INFO Created device 99 : f8-21-ac-e9-41-a6
+2022-01-21 06:35:51,094 INFO Created device 100 : be-0c-f0-e9-99-77
+2022-01-21 06:35:51,095 INFO Created device 101 : 5c-99-ba-5f-49-65
+2022-01-21 06:35:51,095 INFO Created device 102 : 68-c7-5e-3b-49-02
+2022-01-21 06:35:51,095 INFO Created device 103 : e6-50-95-fc-44-1e
+2022-01-21 06:35:51,096 INFO Created device 104 : 8b-99-09-dd-37-88
+2022-01-21 06:35:51,096 INFO Created device 105 : 92-97-5e-89-2f-52
+2022-01-21 06:35:51,097 INFO Created device 106 : 4a-5c-d6-ed-45-b6
+2022-01-21 06:35:51,097 INFO Created device 107 : b1-a4-2d-74-fd-e9
+2022-01-21 06:35:51,098 INFO Created device 108 : 2b-e0-00-f7-f8-8b
+2022-01-21 06:35:51,098 INFO Created device 109 : b2-68-3d-31-71-45
+2022-01-21 06:35:51,098 INFO Created device 110 : d5-de-ba-2c-5a-f2
+2022-01-21 06:35:51,099 INFO Created device 111 : bd-96-d0-d8-68-87
+2022-01-21 06:35:51,099 INFO Created device 112 : 7c-c1-99-96-7b-d3
+2022-01-21 06:35:51,099 INFO Created device 113 : 7a-83-71-b9-ba-cd
+2022-01-21 06:35:51,099 INFO Created device 114 : bc-5f-9e-1a-b6-ac
+2022-01-21 06:35:51,100 INFO Created device 115 : 87-d9-66-d5-94-20
+2022-01-21 06:35:51,100 INFO Created device 116 : 1b-c8-78-7c-18-8b
+2022-01-21 06:35:51,100 INFO Created device 117 : 8e-21-ce-c5-41-3d
+2022-01-21 06:35:51,100 INFO Created device 118 : fd-b2-12-55-64-f4
+2022-01-21 06:35:51,101 INFO Created device 119 : 4b-b6-85-5a-67-8c
+2022-01-21 06:35:51,101 INFO Created device 120 : da-30-9b-79-ac-ee
+2022-01-21 06:35:51,101 INFO Created device 121 : ac-ed-77-51-f2-71
+2022-01-21 06:35:51,101 INFO Created device 122 : eb-86-1b-8a-cf-fd
+2022-01-21 06:35:51,101 INFO Created device 123 : 76-15-13-32-2d-9b
+2022-01-21 06:35:51,102 INFO Created device 124 : e5-55-2c-60-45-b1
+2022-01-21 06:35:51,102 INFO Created device 125 : ed-33-43-07-28-f8
+2022-01-21 06:35:51,103 INFO Created device 126 : a9-50-9a-19-0b-0e
+2022-01-21 06:35:51,103 INFO Created device 127 : ce-ad-42-6c-52-57
+2022-01-21 06:35:51,104 INFO Created device 128 : 4e-fa-97-ed-6f-b6
+2022-01-21 06:35:51,104 INFO Created device 129 : 93-e7-ae-2a-60-f8
+2022-01-21 06:35:51,104 INFO Created device 130 : 65-02-4a-98-98-eb
+2022-01-21 06:35:51,106 INFO Created device 131 : 48-e8-d4-b4-51-ed
+2022-01-21 06:35:51,113 INFO Created device 132 : db-9c-3f-27-d7-eb
+2022-01-21 06:35:51,113 INFO Created device 133 : db-31-9c-73-9b-71
+2022-01-21 06:35:51,114 INFO Created device 134 : 6a-80-da-56-85-44
+2022-01-21 06:35:51,114 INFO Created device 135 : cf-e3-6f-64-42-af
+2022-01-21 06:35:51,115 INFO Created device 136 : 93-7e-50-3f-d5-49
+2022-01-21 06:35:51,116 INFO Created device 137 : 28-f8-29-e7-69-28
+2022-01-21 06:35:51,116 INFO Created device 138 : 08-3b-93-f5-8b-eb
+2022-01-21 06:35:51,135 INFO Created device 139 : fb-5a-a0-8b-34-6e
+2022-01-21 06:35:51,136 INFO Defining new device class ['hvac']
+2022-01-21 06:35:51,136 INFO Created device 140 : eb-71-06-8c-67-c7
+2022-01-21 06:35:51,138 INFO Defining new device class ['basic', 'enumerated', 'variable']
+2022-01-21 06:35:51,138 INFO Created device 141 : 11-b7-e2-b7-10-12
+2022-01-21 06:35:51,138 INFO Created device 142 : d0-3e-d3-a5-61-b6
+2022-01-21 06:35:51,139 INFO Created device 143 : e2-7c-61-c7-c8-f4
+2022-01-21 06:35:51,140 INFO Created device 144 : 3c-b1-4d-d5-83-53
+2022-01-21 06:35:51,140 INFO Created device 145 : f7-d1-84-84-73-ce
+2022-01-21 06:35:51,141 INFO Created device 146 : a8-ae-10-4d-ce-c5
+2022-01-21 06:35:51,141 INFO Created device 147 : 06-cc-d8-80-2e-24
+2022-01-21 06:35:51,141 INFO Created device 148 : 25-60-6d-2d-87-23
+2022-01-21 06:35:51,142 INFO Created device 149 : ec-4d-18-7d-8a-cd
+2022-01-21 06:35:51,142 INFO Created device 150 : 55-99-22-44-de-ea
+2022-01-21 06:35:51,143 INFO Created device 151 : c7-f3-6e-dc-be-78
+2022-01-21 06:35:51,143 INFO Created device 152 : 47-df-50-2a-10-ca
+2022-01-21 06:35:51,144 INFO Created device 153 : 70-3a-71-3f-c1-11
+2022-01-21 06:35:51,144 INFO Created device 154 : 44-d3-27-d0-a1-d4
+2022-01-21 06:35:51,144 INFO Created device 155 : f9-8f-46-25-fa-64
+2022-01-21 06:35:51,145 INFO Created device 156 : fb-37-33-8f-85-25
+2022-01-21 06:35:51,145 INFO Created device 157 : eb-36-57-b9-ad-9e
+2022-01-21 06:35:51,146 INFO Defining new device class ['enumerated', 'hvac']
+2022-01-21 06:35:51,146 INFO Created device 158 : 69-ad-00-84-f4-58
+2022-01-21 06:35:51,146 INFO Created device 159 : e1-30-a4-39-d7-8d
+2022-01-21 06:35:51,147 INFO Created device 160 : 04-04-e0-5c-d1-70
+2022-01-21 06:35:51,148 INFO Created device 161 : 3c-ae-c3-02-6a-6c
+2022-01-21 06:35:51,149 INFO Created device 162 : 7f-6b-54-f1-ea-a6
+2022-01-21 06:35:51,149 INFO Created device 163 : 95-84-3f-c1-96-c5
+2022-01-21 06:35:51,150 INFO Created device 164 : 93-c7-b8-90-7c-4e
+2022-01-21 06:35:51,151 INFO Created device 165 : 78-97-04-05-4a-b2
+2022-01-21 06:35:51,152 INFO Created device 166 : 91-1f-ec-f8-73-92
+2022-01-21 06:35:51,153 INFO Created device 167 : db-c2-3e-65-6b-35
+2022-01-21 06:35:51,158 INFO Created device 168 : 0a-6e-64-1c-f5-69
+2022-01-21 06:35:51,159 INFO Created device 169 : 2d-db-2c-9c-12-e9
+2022-01-21 06:35:51,160 INFO Created device 170 : c9-b8-5e-c9-2b-bf
+2022-01-21 06:35:51,161 INFO Created device 171 : c2-3a-cd-10-83-61
+2022-01-21 06:35:51,162 INFO Created device 172 : 08-20-44-ac-80-07
+2022-01-21 06:35:51,162 INFO Created device 173 : 58-82-0f-cc-46-ba
+2022-01-21 06:35:51,163 INFO Created device 174 : 84-04-e9-0b-69-f2
+2022-01-21 06:35:51,163 INFO Created device 175 : 7b-07-b5-c1-49-e2
+2022-01-21 06:35:51,164 INFO Created device 176 : 2e-3b-da-9f-7d-93
+2022-01-21 06:35:51,165 INFO Created device 177 : 0f-e4-4b-3e-72-75
+2022-01-21 06:35:51,166 INFO Created device 178 : 2c-43-29-6a-a4-bd
+2022-01-21 06:35:51,166 INFO Created device 179 : 4f-85-e4-02-e9-4a
+2022-01-21 06:35:51,168 INFO Created device 180 : d5-a7-53-f4-a0-98
+2022-01-21 06:35:51,168 INFO Created device 181 : 34-e9-2f-b3-08-a7
+2022-01-21 06:35:51,169 INFO Created device 182 : 4e-a1-bd-9b-7f-eb
+2022-01-21 06:35:51,170 INFO Created device 183 : 04-6c-29-6f-a5-56
+2022-01-21 06:35:51,171 INFO Created device 184 : 9e-49-de-18-f4-e3
+2022-01-21 06:35:51,171 INFO Created device 185 : 14-d5-93-bb-6b-91
+2022-01-21 06:35:51,172 INFO Created device 186 : e5-55-fb-87-b5-9a
+2022-01-21 06:35:51,173 INFO Created device 187 : 09-a8-cd-68-f2-71
+2022-01-21 06:35:51,174 INFO Created device 188 : 86-2e-67-1b-8e-e6
+2022-01-21 06:35:51,174 INFO Created device 189 : 84-54-a6-96-84-f9
+2022-01-21 06:35:51,175 INFO Created device 190 : 89-30-a7-84-19-65
+2022-01-21 06:35:51,176 INFO Created device 191 : 16-51-b2-83-20-a3
+2022-01-21 06:35:51,177 INFO Created device 192 : db-f2-12-a4-a4-54
+2022-01-21 06:35:51,177 INFO Created device 193 : f6-b9-d5-9d-7b-43
+2022-01-21 06:35:51,178 INFO Created device 194 : d9-de-c5-13-10-e9
+2022-01-21 06:35:51,179 INFO Created device 195 : 9a-73-c7-9c-e1-02
+2022-01-21 06:35:51,180 INFO Created device 196 : 5a-09-97-9c-37-1b
+2022-01-21 06:35:51,180 INFO Created device 197 : ce-aa-72-b3-8d-2d
+2022-01-21 06:35:51,181 INFO Created device 198 : eb-92-0a-44-80-d4
+2022-01-21 06:35:51,181 INFO Created device 199 : ac-c1-94-d1-66-4f
+2022-01-21 06:35:51,182 INFO Created device 200 : 94-f0-9e-08-a9-92
+2022-01-21 06:35:51,183 INFO Created device 201 : a4-56-dd-8a-57-bd
+2022-01-21 06:35:51,184 INFO Created device 202 : 36-16-84-c5-3e-ef
+2022-01-21 06:35:51,184 INFO Created device 203 : 19-c6-4c-04-11-15
+2022-01-21 06:35:51,185 INFO Created device 204 : 07-d7-4c-8e-9c-58
+2022-01-21 06:35:51,186 INFO Created device 205 : 9e-ae-a1-d0-6e-9c
+2022-01-21 06:35:51,187 INFO Created device 206 : c6-04-64-74-16-37
+2022-01-21 06:35:51,187 INFO Created device 207 : 14-59-a5-55-5a-63
+2022-01-21 06:35:51,189 INFO Created device 208 : 5a-b2-18-07-21-22
+2022-01-21 06:35:51,189 INFO Created device 209 : 73-5b-b4-be-20-18
+2022-01-21 06:35:51,190 INFO Created device 210 : 0f-44-91-28-08-9e
+2022-01-21 06:35:51,190 INFO Created device 211 : 56-8f-9d-7e-99-15
+2022-01-21 06:35:51,191 INFO Created device 212 : 80-ca-f2-c0-6f-ac
+2022-01-21 06:35:51,192 INFO Created device 213 : 5c-d6-04-6b-ea-50
+2022-01-21 06:35:51,193 INFO Created device 214 : 31-8a-2a-9f-db-93
+2022-01-21 06:35:51,194 INFO Created device 215 : 3a-b5-6c-2b-a0-6e
+2022-01-21 06:35:51,194 INFO Created device 216 : b3-7f-a7-23-61-80
+2022-01-21 06:35:51,194 INFO Created device 217 : aa-79-b7-93-62-4e
+2022-01-21 06:35:51,196 INFO Created device 218 : 91-46-42-24-5b-21
+2022-01-21 06:35:51,197 INFO Created device 219 : f4-fe-b2-a9-de-fe
+2022-01-21 06:35:51,198 INFO Created device 220 : ce-42-9d-4f-3f-4b
+2022-01-21 06:35:51,198 INFO Created device 221 : 2a-27-9a-a1-94-f6
+2022-01-21 06:35:51,200 INFO Created device 222 : bd-74-0e-42-6b-5e
+2022-01-21 06:35:51,200 INFO Created device 223 : dd-0c-e8-59-a3-c9
+2022-01-21 06:35:51,204 INFO Created device 224 : c7-b4-c9-02-81-09
+2022-01-21 06:35:51,205 INFO Created device 225 : 32-9d-4e-30-79-d3
+2022-01-21 06:35:51,206 INFO Created device 226 : ad-f9-63-a6-e1-ad
+2022-01-21 06:35:51,206 INFO Created device 227 : ad-cd-48-50-ec-8f
+2022-01-21 06:35:51,207 INFO Created device 228 : e8-62-6a-45-ef-ef
+2022-01-21 06:35:51,208 INFO Created device 229 : 72-a6-84-0e-f5-9a
+2022-01-21 06:35:51,209 INFO Created device 230 : a1-9d-55-41-31-ca
+2022-01-21 06:35:51,209 INFO Created device 231 : f2-f7-50-18-67-9f
+2022-01-21 06:35:51,210 INFO Created device 232 : 5d-5d-6d-4b-63-d2
+2022-01-21 06:35:51,211 INFO Created device 233 : f1-68-ac-48-41-b6
+2022-01-21 06:35:51,212 INFO Created device 234 : ee-f5-9b-2b-74-91
+2022-01-21 06:35:51,212 INFO Created device 235 : 5b-33-82-b0-ef-dd
+2022-01-21 06:35:51,213 INFO Created device 236 : 2e-0f-60-91-74-95
+2022-01-21 06:35:51,213 INFO Created device 237 : eb-a1-d5-db-c7-e7
+2022-01-21 06:35:51,215 INFO Created device 238 : 21-3c-60-4d-ec-5f
+2022-01-21 06:35:51,215 INFO Created device 239 : 69-ee-9b-ea-41-39
+2022-01-21 06:35:51,216 INFO Created device 240 : 53-8e-71-e3-50-e4
+2022-01-21 06:35:51,216 INFO Created device 241 : a9-1f-a0-be-cf-2a
+2022-01-21 06:35:51,217 INFO Created device 242 : b8-d2-8f-40-2d-67
+2022-01-21 06:35:51,218 INFO Created device 243 : 73-42-c2-46-73-17
+2022-01-21 06:35:51,219 INFO Created device 244 : 2a-85-74-db-7d-e0
+2022-01-21 06:35:51,219 INFO Created device 245 : aa-b0-d8-0c-0e-a3
+2022-01-21 06:35:51,220 INFO Created device 246 : 4d-c0-36-61-21-69
+2022-01-21 06:35:51,220 INFO Created device 247 : f0-9e-94-12-30-27
+2022-01-21 06:35:51,221 INFO Created device 248 : fa-d8-de-4a-5f-df
+2022-01-21 06:35:51,222 INFO Created device 249 : 4a-2e-94-89-6f-c6
+2022-01-21 06:35:51,222 INFO Created device 250 : 78-0d-f1-3d-93-94
+2022-01-21 06:35:51,223 INFO Created device 251 : c4-7a-f5-64-18-cf
+2022-01-21 06:35:51,224 INFO Created device 252 : fe-28-f9-9b-db-0d
+2022-01-21 06:35:51,225 INFO Created device 253 : 1d-18-25-fb-21-1f
+2022-01-21 06:35:51,225 INFO Created device 254 : 78-5e-dd-1a-e0-8f
+2022-01-21 06:35:51,226 INFO Created device 255 : 05-14-c7-fe-34-22
+2022-01-21 06:35:51,227 INFO Created device 256 : 50-60-41-9c-e8-ba
+2022-01-21 06:35:51,228 INFO Created device 257 : 6c-af-fb-cc-4b-a2
+2022-01-21 06:35:51,228 INFO Created device 258 : 5c-72-3a-10-50-0c
+2022-01-21 06:35:51,229 INFO Created device 259 : 34-b1-4c-a1-bd-66
+2022-01-21 06:35:51,230 INFO Created device 260 : 87-5f-fc-aa-86-7e
+2022-01-21 06:35:51,232 INFO Created device 261 : bb-4e-41-f2-f4-ce
+2022-01-21 06:35:51,232 INFO Created device 262 : af-2a-2f-51-9b-05
+2022-01-21 06:35:51,234 INFO Created device 263 : 0a-cf-57-c7-83-54
+2022-01-21 06:35:51,234 INFO Created device 264 : 9c-5c-74-c2-1f-6f
+2022-01-21 06:35:51,235 INFO Created device 265 : 14-c2-a9-4b-a2-6a
+2022-01-21 06:35:51,235 INFO Created device 266 : 84-d0-1b-b5-52-22
+2022-01-21 06:35:51,236 INFO Created device 267 : ec-64-44-7b-f8-0a
+2022-01-21 06:35:51,236 INFO Created device 268 : 60-01-68-da-07-a0
+2022-01-21 06:35:51,238 INFO Created device 269 : 38-b1-a5-87-90-8e
+2022-01-21 06:35:51,239 INFO Created device 270 : c8-e3-10-95-10-84
+2022-01-21 06:35:51,240 INFO Created device 271 : 5f-5d-b7-e0-7d-0a
+2022-01-21 06:35:51,240 INFO Created device 272 : a6-0f-00-ae-d2-04
+2022-01-21 06:35:51,241 INFO Created device 273 : 9e-89-ac-38-dd-96
+2022-01-21 06:35:51,241 INFO Created device 274 : ce-c2-1e-62-47-81
+2022-01-21 06:35:51,243 INFO Created device 275 : 8e-c3-f2-3b-41-fe
+2022-01-21 06:35:51,243 INFO Created device 276 : 4c-a8-ca-a2-10-13
+2022-01-21 06:35:51,244 INFO Created device 277 : be-9c-4a-55-ab-dc
+2022-01-21 06:35:51,244 INFO Created device 278 : 57-6c-79-fe-a3-fb
+2022-01-21 06:35:51,245 INFO Created device 279 : 09-74-6a-8a-e2-53
+2022-01-21 06:35:51,245 INFO Created device 280 : be-dd-36-35-b9-33
+2022-01-21 06:35:51,248 INFO Created device 281 : c9-45-03-a7-e6-69
+2022-01-21 06:35:51,248 INFO Created device 282 : 87-f2-a4-07-77-01
+2022-01-21 06:35:51,252 INFO Created device 283 : 45-6e-bb-03-e0-95
+2022-01-21 06:35:51,253 INFO Created device 284 : de-0d-98-9a-68-6c
+2022-01-21 06:35:51,254 INFO Created device 285 : 2a-f3-16-72-e2-fd
+2022-01-21 06:35:51,254 INFO Created device 286 : 3c-e6-94-09-3a-a0
+2022-01-21 06:35:51,255 INFO Created device 287 : 18-43-02-35-a3-9b
+2022-01-21 06:35:51,256 INFO Created device 288 : 66-e8-62-cd-8c-06
+2022-01-21 06:35:51,257 INFO Created device 289 : 30-a5-24-bb-18-56
+2022-01-21 06:35:51,257 INFO Created device 290 : 1a-ec-88-fa-df-14
+2022-01-21 06:35:51,258 INFO Created device 291 : 17-1d-e3-73-dc-08
+2022-01-21 06:35:51,258 INFO Created device 292 : 33-67-a5-65-c1-d2
+2022-01-21 06:35:51,260 INFO Created device 293 : ea-c0-33-bb-54-a9
+2022-01-21 06:35:51,260 INFO Created device 294 : 96-d2-ec-56-0e-0f
+2022-01-21 06:35:51,260 INFO Defining new device class ['comms', 'variable']
+2022-01-21 06:35:51,261 INFO Created device 295 : e4-6b-8b-68-71-a9
+2022-01-21 06:35:51,262 INFO Created device 296 : 39-71-94-f8-ec-ac
+2022-01-21 06:35:51,263 INFO Created device 297 : 73-82-b8-5c-db-81
+2022-01-21 06:35:51,264 INFO Created device 298 : a2-f3-d0-92-a9-53
+2022-01-21 06:35:51,264 INFO Created device 299 : b0-f6-90-49-7c-1c
+2022-01-21 06:35:51,265 INFO Created device 300 : dc-83-44-7d-5c-f2
+2022-01-21 06:35:51,266 INFO Created device 301 : 77-53-f8-1a-25-2f
+2022-01-21 06:35:51,268 INFO Created device 302 : f5-ca-de-1b-46-69
+2022-01-21 06:35:51,268 INFO Created device 303 : da-4a-e8-da-e2-ef
+2022-01-21 06:35:51,271 INFO Created device 304 : 74-80-94-96-44-45
+2022-01-21 06:35:51,272 INFO Created device 305 : 16-8e-94-8d-d6-0b
+2022-01-21 06:35:51,273 INFO Created device 306 : 7a-bf-52-71-87-c6
+2022-01-21 06:35:51,273 INFO Created device 307 : 19-f2-8a-0e-3f-08
+2022-01-21 06:35:51,274 INFO Created device 308 : 35-17-18-66-cf-65
+2022-01-21 06:35:51,274 INFO Created device 309 : c5-5d-b7-54-da-18
+2022-01-21 06:35:51,275 INFO Created device 310 : cd-45-b4-b6-32-98
+2022-01-21 06:35:51,276 INFO Created device 311 : d5-ec-fc-8b-e1-23
+2022-01-21 06:35:51,277 INFO Created device 312 : c3-e2-a6-f5-59-5d
+2022-01-21 06:35:51,277 INFO Created device 313 : 47-e2-83-e2-a6-7b
+2022-01-21 06:35:51,278 INFO Created device 314 : 0a-86-77-ef-0a-6c
+2022-01-21 06:35:51,279 INFO Created device 315 : 06-32-1c-a6-e5-4c
+2022-01-21 06:35:51,281 INFO Created device 316 : 2e-43-85-b7-6d-ce
+2022-01-21 06:35:51,281 INFO Created device 317 : 99-f3-d1-d0-28-4a
+2022-01-21 06:35:51,282 INFO Created device 318 : 7e-c4-11-80-f8-d9
+2022-01-21 06:35:51,283 INFO Created device 319 : 13-d2-32-57-74-18
+2022-01-21 06:35:51,284 INFO Created device 320 : 76-96-1c-7d-ab-7f
+2022-01-21 06:35:51,284 INFO Created device 321 : 64-b1-ec-cd-48-4a
+2022-01-21 06:35:51,286 INFO Created device 322 : 12-6b-f5-39-08-84
+2022-01-21 06:35:51,286 INFO Created device 323 : 86-82-4e-a5-e0-c8
+2022-01-21 06:35:51,288 INFO Created device 324 : 26-7f-42-7f-b0-ed
+2022-01-21 06:35:51,288 INFO Created device 325 : 87-ec-53-f9-3d-3f
+2022-01-21 06:35:51,289 INFO Created device 326 : 72-fb-87-8a-ef-1a
+2022-01-21 06:35:51,289 INFO Created device 327 : 66-d4-1e-15-e9-c7
+2022-01-21 06:35:51,291 INFO Created device 328 : cf-e8-b5-33-0f-a8
+2022-01-21 06:35:51,291 INFO Created device 329 : 94-b2-63-4d-3e-65
+2022-01-21 06:35:51,296 INFO Created device 330 : e5-c4-c0-2f-cf-b9
+2022-01-21 06:35:51,299 INFO Created device 331 : 30-31-22-3f-ef-1f
+2022-01-21 06:35:51,300 INFO Created device 332 : b1-df-03-c2-4d-46
+2022-01-21 06:35:51,301 INFO Created device 333 : 85-34-21-0f-91-9f
+2022-01-21 06:35:51,303 INFO Created device 334 : 4b-63-50-ba-73-a1
+2022-01-21 06:35:51,303 INFO Created device 335 : 3c-2b-c2-25-8b-e1
+2022-01-21 06:35:51,305 INFO Created device 336 : 6f-7e-22-a1-51-2b
+2022-01-21 06:35:51,305 INFO Created device 337 : 23-7e-ce-73-54-58
+2022-01-21 06:35:51,307 INFO Created device 338 : 2c-3a-35-1c-42-86
+2022-01-21 06:35:51,308 INFO Created device 339 : 5c-ad-ce-7b-a3-df
+2022-01-21 06:35:51,309 INFO Created device 340 : 48-35-fa-9c-88-64
+2022-01-21 06:35:51,309 INFO Created device 341 : 14-5c-65-a8-65-63
+2022-01-21 06:35:51,311 INFO Created device 342 : 39-31-d6-f5-5b-d8
+2022-01-21 06:35:51,311 INFO Created device 343 : 41-2a-22-95-23-6f
+2022-01-21 06:35:51,312 INFO Created device 344 : f7-40-dc-8b-74-45
+2022-01-21 06:35:51,312 INFO Created device 345 : 6f-3f-64-f5-64-14
+2022-01-21 06:35:51,313 INFO Created device 346 : 11-50-4e-b8-9a-a7
+2022-01-21 06:35:51,314 INFO Created device 347 : 0d-f5-0b-18-b2-05
+2022-01-21 06:35:51,315 INFO Created device 348 : 11-7b-b7-42-3a-41
+2022-01-21 06:35:51,315 INFO Created device 349 : 2f-18-b2-9f-13-1c
+2022-01-21 06:35:51,316 INFO Created device 350 : c0-c1-c0-57-95-07
+2022-01-21 06:35:51,317 INFO Created device 351 : 5d-4d-23-77-72-91
+2022-01-21 06:35:51,318 INFO Created device 352 : 19-f5-c4-6c-70-1c
+2022-01-21 06:35:51,318 INFO Created device 353 : 7a-2a-72-bd-84-b3
+2022-01-21 06:35:51,319 INFO Created device 354 : 23-59-85-8f-f9-05
+2022-01-21 06:35:51,320 INFO Created device 355 : cd-ee-34-e2-f3-b1
+2022-01-21 06:35:51,321 INFO Created device 356 : 80-c5-3c-9d-e2-06
+2022-01-21 06:35:51,321 INFO Created device 357 : 20-58-5b-29-00-fc
+2022-01-21 06:35:51,322 INFO Created device 358 : db-3c-0b-f8-26-a8
+2022-01-21 06:35:51,323 INFO Created device 359 : d3-e1-eb-b1-c2-dd
+2022-01-21 06:35:51,325 INFO Created device 360 : 36-c8-c1-14-4f-d9
+2022-01-21 06:35:51,326 INFO Created device 361 : 56-bc-a3-d5-64-5c
+2022-01-21 06:35:51,327 INFO Created device 362 : 10-41-46-af-a0-df
+2022-01-21 06:35:51,328 INFO Created device 363 : e5-5b-63-ce-21-15
+2022-01-21 06:35:51,330 INFO Created device 364 : 08-3e-d5-3f-88-e9
+2022-01-21 06:35:51,330 INFO Created device 365 : 09-9c-26-18-6d-c6
+2022-01-21 06:35:51,333 INFO Created device 366 : a5-77-85-b6-e6-5a
+2022-01-21 06:35:51,334 INFO Created device 367 : 94-55-d7-90-d4-65
+2022-01-21 06:35:51,335 INFO Created device 368 : 96-0c-6f-f9-4d-fd
+2022-01-21 06:35:51,336 INFO Created device 369 : 50-af-9c-f7-bb-b7
+2022-01-21 06:35:51,338 INFO Created device 370 : b9-94-2d-14-8f-bc
+2022-01-21 06:35:51,339 INFO Created device 371 : 5b-98-72-17-f3-df
+2022-01-21 06:35:51,347 INFO Created device 372 : 48-86-de-eb-6d-72
+2022-01-21 06:35:51,348 INFO Created device 373 : ed-9b-88-c3-ae-3f
+2022-01-21 06:35:51,351 INFO Created device 374 : bd-1e-cd-86-f9-36
+2022-01-21 06:35:51,351 INFO Created device 375 : 64-fe-73-99-d1-a9
+2022-01-21 06:35:51,353 INFO Created device 376 : 46-43-f2-1c-4d-d1
+2022-01-21 06:35:51,354 INFO Created device 377 : e1-ef-69-5f-e4-19
+2022-01-21 06:35:51,356 INFO Created device 378 : 40-e4-74-5f-e7-4d
+2022-01-21 06:35:51,357 INFO Created device 379 : d7-bc-18-71-b9-1d
+2022-01-21 06:35:51,359 INFO Created device 380 : 9d-49-9b-a3-ad-9e
+2022-01-21 06:35:51,360 INFO Created device 381 : 5b-7f-2b-c2-d1-ef
+2022-01-21 06:35:51,362 INFO Created device 382 : 30-f0-98-db-8e-0d
+2022-01-21 06:35:51,363 INFO Created device 383 : 61-b3-5a-d8-56-f2
+2022-01-21 06:35:51,365 INFO Created device 384 : f9-0a-5a-d8-94-b9
+2022-01-21 06:35:51,365 INFO Created device 385 : 46-a2-b4-db-76-39
+2022-01-21 06:35:51,367 INFO Created device 386 : 74-e3-05-b4-fb-ca
+2022-01-21 06:35:51,368 INFO Created device 387 : 08-7f-1a-e1-ed-97
+2022-01-21 06:35:51,370 INFO Created device 388 : 51-1e-ae-36-42-58
+2022-01-21 06:35:51,371 INFO Created device 389 : 8e-6d-30-08-b1-8a
+2022-01-21 06:35:51,373 INFO Created device 390 : 4e-bf-98-c7-40-5e
+2022-01-21 06:35:51,373 INFO Created device 391 : 85-65-de-d9-72-51
+2022-01-21 06:35:51,375 INFO Created device 392 : 3d-2e-ee-6b-ca-03
+2022-01-21 06:35:51,376 INFO Created device 393 : 44-7a-48-84-4e-93
+2022-01-21 06:35:51,379 INFO Created device 394 : 95-57-80-f3-c0-a6
+2022-01-21 06:35:51,379 INFO Created device 395 : 47-8a-dd-5c-81-b9
+2022-01-21 06:35:51,381 INFO Created device 396 : 67-2e-f5-c5-4c-f0
+2022-01-21 06:35:51,382 INFO Created device 397 : 96-b0-87-29-dc-b3
+2022-01-21 06:35:51,383 INFO Created device 398 : 19-f6-23-e2-06-ef
+2022-01-21 06:35:51,384 INFO Created device 399 : c5-d2-11-57-50-97
+2022-01-21 06:35:51,386 INFO Created device 400 : 84-87-07-1a-4b-ea
+2022-01-21 06:35:51,387 INFO Created device 401 : 9d-7e-8b-a2-54-d2
+2022-01-21 06:35:51,393 INFO Created device 402 : 7a-6c-3c-c9-fd-0f
+2022-01-21 06:35:51,394 INFO Created device 403 : 20-69-67-fb-ca-f9
+2022-01-21 06:35:51,396 INFO Created device 404 : d2-d6-8a-6a-d5-b3
+2022-01-21 06:35:51,397 INFO Created device 405 : 42-f1-e7-a8-d0-9a
+2022-01-21 06:35:51,399 INFO Created device 406 : d1-54-d5-87-e2-1c
+2022-01-21 06:35:51,400 INFO Created device 407 : 6c-2f-04-cd-e6-49
+2022-01-21 06:35:51,403 INFO Created device 408 : 67-c6-02-d8-e8-b3
+2022-01-21 06:35:51,404 INFO Created device 409 : 8c-cd-9e-b8-f3-dc
+2022-01-21 06:35:51,406 INFO Created device 410 : 7b-13-e1-46-f4-f2
+2022-01-21 06:35:51,406 INFO Created device 411 : e5-2b-f3-7f-47-dd
+2022-01-21 06:35:51,408 INFO Created device 412 : b1-a3-eb-2c-c5-0c
+2022-01-21 06:35:51,409 INFO Created device 413 : ca-fc-a7-a5-b7-61
+2022-01-21 06:35:51,411 INFO Created device 414 : 64-a6-c7-0f-0b-a2
+2022-01-21 06:35:51,411 INFO Created device 415 : f9-d8-57-51-0d-4b
+2022-01-21 06:35:51,413 INFO Created device 416 : ba-5a-38-1d-65-96
+2022-01-21 06:35:51,414 INFO Created device 417 : 80-9e-24-98-68-a4
+2022-01-21 06:35:51,416 INFO Created device 418 : 32-6c-9c-7c-43-0a
+2022-01-21 06:35:51,417 INFO Created device 419 : 75-75-d2-96-2c-08
+2022-01-21 06:35:51,419 INFO Created device 420 : 65-cf-d8-12-b0-70
+2022-01-21 06:35:51,420 INFO Created device 421 : fc-f5-25-12-a8-41
+2022-01-21 06:35:51,431 INFO Created device 422 : 39-a6-65-e6-95-e0
+2022-01-21 06:35:51,431 INFO Created device 423 : 3d-6f-52-07-fa-8a
+2022-01-21 06:35:51,434 INFO Created device 424 : 35-c5-21-33-55-da
+2022-01-21 06:35:51,435 INFO Created device 425 : 87-4b-aa-d5-58-a9
+2022-01-21 06:35:51,441 INFO Created device 426 : 5f-3d-8f-9f-c2-8c
+2022-01-21 06:35:51,441 INFO Created device 427 : 84-28-f8-af-41-0c
+2022-01-21 06:35:51,444 INFO Created device 428 : 91-cc-53-19-46-92
+2022-01-21 06:35:51,444 INFO Created device 429 : a9-e1-23-19-07-0b
+2022-01-21 06:35:51,447 INFO Created device 430 : 58-39-23-07-06-68
+2022-01-21 06:35:51,447 INFO Created device 431 : d9-ad-7d-54-a6-58
+2022-01-21 06:35:51,449 INFO Created device 432 : 27-d2-7e-26-b0-76
+2022-01-21 06:35:51,450 INFO Created device 433 : 40-59-89-5a-7f-b5
+2022-01-21 06:35:51,452 INFO Created device 434 : af-c8-47-1f-eb-76
+2022-01-21 06:35:51,452 INFO Created device 435 : a8-44-fa-04-38-76
+2022-01-21 06:35:51,454 INFO Created device 436 : f4-83-fc-70-43-f5
+2022-01-21 06:35:51,455 INFO Created device 437 : 0f-fa-4e-8e-43-bd
+2022-01-21 06:35:51,457 INFO Created device 438 : 9e-3c-7b-f9-60-46
+2022-01-21 06:35:51,458 INFO Created device 439 : ce-4f-8d-80-0b-95
+2022-01-21 06:35:51,459 INFO Created device 440 : da-82-c6-28-9a-0f
+2022-01-21 06:35:51,460 INFO Created device 441 : bc-16-1b-dc-51-d0
+2022-01-21 06:35:51,462 INFO Created device 442 : 8a-0a-b7-61-96-c7
+2022-01-21 06:35:51,463 INFO Created device 443 : b2-58-43-7f-a1-b7
+2022-01-21 06:35:51,465 INFO Created device 444 : fa-41-ef-34-86-c6
+2022-01-21 06:35:51,466 INFO Created device 445 : 91-c9-63-8a-d5-d4
+2022-01-21 06:35:51,468 INFO Created device 446 : 0f-7f-5c-8a-a8-81
+2022-01-21 06:35:51,469 INFO Created device 447 : 86-1e-29-ad-b6-6b
+2022-01-21 06:35:51,471 INFO Created device 448 : 54-f9-cd-f6-23-13
+2022-01-21 06:35:51,471 INFO Created device 449 : 8f-aa-a2-12-18-c6
+2022-01-21 06:35:51,473 INFO Created device 450 : 99-8c-8f-ad-73-58
+2022-01-21 06:35:51,474 INFO Created device 451 : 7f-c0-23-ea-89-33
+2022-01-21 06:35:51,475 INFO Created device 452 : 02-49-e5-da-ec-42
+2022-01-21 06:35:51,476 INFO Created device 453 : 3b-28-23-22-a6-82
+2022-01-21 06:35:51,478 INFO Created device 454 : e2-10-8d-bb-04-7f
+2022-01-21 06:35:51,478 INFO Created device 455 : d5-6e-b2-3f-d1-29
+2022-01-21 06:35:51,481 INFO Created device 456 : fd-40-6c-69-12-84
+2022-01-21 06:35:51,481 INFO Created device 457 : 26-5a-ac-82-57-43
+2022-01-21 06:35:51,486 INFO Created device 458 : c4-88-27-5c-6d-0c
+2022-01-21 06:35:51,487 INFO Created device 459 : af-cc-4a-da-80-88
+2022-01-21 06:35:51,488 INFO Created device 460 : ed-17-85-07-a9-fc
+2022-01-21 06:35:51,489 INFO Created device 461 : 8d-ca-25-ac-6d-32
+2022-01-21 06:35:51,491 INFO Created device 462 : 4d-61-c8-24-9c-d5
+2022-01-21 06:35:51,491 INFO Created device 463 : 1b-72-9f-fc-39-7f
+2022-01-21 06:35:51,493 INFO Created device 464 : 1f-6b-1a-47-93-c3
+2022-01-21 06:35:51,493 INFO Created device 465 : bc-9f-fa-cb-22-1e
+2022-01-21 06:35:51,495 INFO Created device 466 : ac-23-c8-80-c4-87
+2022-01-21 06:35:51,496 INFO Created device 467 : 40-63-aa-55-83-32
+2022-01-21 06:35:51,498 INFO Created device 468 : 61-08-17-d2-0a-a4
+2022-01-21 06:35:51,498 INFO Created device 469 : ee-17-76-e0-63-6f
+2022-01-21 06:35:51,500 INFO Created device 470 : 46-6b-ea-44-c7-94
+2022-01-21 06:35:51,500 INFO Created device 471 : 4c-2d-29-4a-4f-d9
+2022-01-21 06:35:51,502 INFO Created device 472 : 37-86-83-e9-c6-c7
+2022-01-21 06:35:51,502 INFO Created device 473 : 3f-9c-57-1a-1c-93
+2022-01-21 06:35:51,504 INFO Created device 474 : 40-76-dc-53-65-4e
+2022-01-21 06:35:51,504 INFO Created device 475 : 6c-c7-0d-c9-56-4a
+2022-01-21 06:35:51,506 INFO Created device 476 : bc-c7-43-25-a5-2e
+2022-01-21 06:35:51,507 INFO Created device 477 : c4-0a-b4-a3-0d-d2
+2022-01-21 06:35:51,509 INFO Created device 478 : 96-09-04-ed-44-58
+2022-01-21 06:35:51,509 INFO Created device 479 : 7c-2f-41-5a-5e-cf
+2022-01-21 06:35:51,511 INFO Created device 480 : ea-19-1b-d8-08-90
+2022-01-21 06:35:51,512 INFO Created device 481 : d1-f6-e5-c0-ea-dd
+2022-01-21 06:35:51,515 INFO Created device 482 : aa-72-52-4b-6e-94
+2022-01-21 06:35:51,515 INFO Created device 483 : b7-9b-dc-95-dc-36
+2022-01-21 06:35:51,519 INFO Created device 484 : c7-9c-ac-04-22-23
+2022-01-21 06:35:51,520 INFO Created device 485 : 80-dc-6e-46-00-81
+2022-01-21 06:35:51,521 INFO Created device 486 : 97-82-f2-f4-35-1b
+2022-01-21 06:35:51,522 INFO Created device 487 : a7-cc-55-6f-a4-3e
+2022-01-21 06:35:51,523 INFO Created device 488 : db-88-dc-b6-a3-a7
+2022-01-21 06:35:51,523 INFO Created device 489 : 69-f9-75-78-c4-0c
+2022-01-21 06:35:51,524 INFO Created device 490 : 10-b2-a4-f0-a1-1b
+2022-01-21 06:35:51,525 INFO Created device 491 : 1c-55-b5-8f-43-9d
+2022-01-21 06:35:51,526 INFO Created device 492 : e7-46-d5-f1-75-bb
+2022-01-21 06:35:51,526 INFO Created device 493 : b8-13-89-4c-a7-e2
+2022-01-21 06:35:51,531 INFO Created device 494 : a6-b9-ae-11-de-43
+2022-01-21 06:35:51,532 INFO Created device 495 : f3-26-5b-80-b6-06
+2022-01-21 06:35:51,533 INFO Created device 496 : d1-5f-10-0b-05-76
+2022-01-21 06:35:51,533 INFO Created device 497 : 86-81-4d-03-ce-0b
+2022-01-21 06:35:51,535 INFO Created device 498 : 1f-c2-7c-5f-b4-35
+2022-01-21 06:35:51,536 INFO Created device 499 : 2f-f0-f9-50-a8-26
+2022-01-21 06:35:51,538 INFO Created device 500 : 0a-0f-7a-18-8a-3a
+2022-01-21 06:35:51,539 INFO Created device 501 : 1f-47-4a-fc-cc-2b
+2022-01-21 06:35:51,540 INFO Created device 502 : ce-48-04-04-74-e6
+2022-01-21 06:35:51,540 INFO Created device 503 : b3-d7-12-20-36-b0
+2022-01-21 06:35:51,541 INFO Created device 504 : 12-7c-c3-da-06-cd
+2022-01-21 06:35:51,542 INFO Created device 505 : 7d-f2-a7-76-68-55
+2022-01-21 06:35:51,543 INFO Created device 506 : 33-92-bb-a5-2b-32
+2022-01-21 06:35:51,544 INFO Created device 507 : a8-53-95-a4-15-26
+2022-01-21 06:35:51,546 INFO Created device 508 : 4d-b6-5b-79-6a-85
+2022-01-21 06:35:51,547 INFO Created device 509 : 4c-4a-f5-65-14-26
+2022-01-21 06:35:51,548 INFO Created device 510 : 4c-91-91-ed-cc-48
+2022-01-21 06:35:51,549 INFO Created device 511 : a4-94-f0-69-30-aa
+2022-01-21 06:35:51,550 INFO Created device 512 : e5-b8-3f-6a-fe-95
+2022-01-21 06:35:51,550 INFO Created device 513 : 36-45-86-57-5e-ad
+2022-01-21 06:35:51,551 INFO Created device 514 : f4-3c-26-56-46-32
+2022-01-21 06:35:51,552 INFO Created device 515 : 80-33-48-92-c7-11
+2022-01-21 06:35:51,553 INFO Created device 516 : c5-ee-ee-dc-d1-dd
+2022-01-21 06:35:51,553 INFO Created device 517 : 9e-92-7d-d0-04-12
+2022-01-21 06:35:51,554 INFO Created device 518 : a5-f2-db-3f-6d-04
+2022-01-21 06:35:51,554 INFO Created device 519 : cf-e9-9b-51-59-f1
+2022-01-21 06:35:51,555 INFO Created device 520 : 23-e3-6b-db-be-cd
+2022-01-21 06:35:51,556 INFO Created device 521 : 88-93-a1-1a-ac-ae
+2022-01-21 06:35:51,557 INFO Created device 522 : bf-4a-15-f5-d5-5d
+2022-01-21 06:35:51,557 INFO Created device 523 : 0d-26-92-cd-4f-52
+2022-01-21 06:35:51,558 INFO Created device 524 : f2-20-37-b0-3f-5f
+2022-01-21 06:35:51,558 INFO Created device 525 : 75-51-e9-5f-c7-67
+2022-01-21 06:35:51,560 INFO Created device 526 : 39-f1-b7-0c-64-e7
+2022-01-21 06:35:51,560 INFO Created device 527 : 94-f6-ee-85-e7-f8
+2022-01-21 06:35:51,562 INFO Created device 528 : 9c-e2-c3-1b-1f-b2
+2022-01-21 06:35:51,562 INFO Created device 529 : 70-26-04-85-70-83
+2022-01-21 06:35:51,563 INFO Created device 530 : b4-29-46-72-46-81
+2022-01-21 06:35:51,563 INFO Created device 531 : a3-4b-ba-02-eb-fd
+2022-01-21 06:35:51,564 INFO Created device 532 : 31-5d-5f-f9-d0-1a
+2022-01-21 06:35:51,565 INFO Created device 533 : d6-88-d0-f6-b1-8e
+2022-01-21 06:35:51,566 INFO Created device 534 : 64-61-f2-0d-3e-71
+2022-01-21 06:35:51,566 INFO Created device 535 : 81-00-03-fa-e5-33
+2022-01-21 06:35:51,568 INFO Created device 536 : 96-62-3b-6b-1c-14
+2022-01-21 06:35:51,568 INFO Created device 537 : 0f-f4-d7-bf-1a-cb
+2022-01-21 06:35:51,570 INFO Created device 538 : e8-e1-b6-4f-db-8f
+2022-01-21 06:35:51,570 INFO Created device 539 : 0d-fb-30-87-76-8a
+2022-01-21 06:35:51,571 INFO Created device 540 : 98-6a-b3-c6-2c-22
+2022-01-21 06:35:51,572 INFO Created device 541 : 1a-5e-3c-54-f3-27
+2022-01-21 06:35:51,573 INFO Created device 542 : 1e-8c-45-26-3b-b5
+2022-01-21 06:35:51,573 INFO Created device 543 : a8-e5-61-90-05-fb
+2022-01-21 06:35:51,576 INFO Created device 544 : 3d-1a-38-a3-01-78
+2022-01-21 06:35:51,578 INFO Created device 545 : 91-c6-2b-8e-bd-74
+2022-01-21 06:35:51,583 INFO Created device 546 : 97-4e-af-c6-4b-cb
+2022-01-21 06:35:51,584 INFO Created device 547 : 91-94-9d-f3-3b-d6
+2022-01-21 06:35:51,585 INFO Created device 548 : 44-51-91-c5-01-15
+2022-01-21 06:35:51,585 INFO Created device 549 : 6b-a2-f9-dd-44-6e
+2022-01-21 06:35:51,586 INFO Created device 550 : c2-48-99-a3-13-42
+2022-01-21 06:35:51,587 INFO Created device 551 : fe-df-7f-de-b3-c1
+2022-01-21 06:35:51,589 INFO Created device 552 : 2a-d4-89-73-21-85
+2022-01-21 06:35:51,589 INFO Created device 553 : d0-e8-ca-d3-4b-54
+2022-01-21 06:35:51,591 INFO Created device 554 : 54-4a-b1-e7-52-24
+2022-01-21 06:35:51,591 INFO Created device 555 : 32-c7-4b-34-70-b0
+2022-01-21 06:35:51,592 INFO Created device 556 : 89-0e-00-c3-7c-61
+2022-01-21 06:35:51,593 INFO Created device 557 : ac-f4-5c-98-66-fd
+2022-01-21 06:35:51,594 INFO Created device 558 : a6-9e-db-b5-da-c7
+2022-01-21 06:35:51,594 INFO Created device 559 : 79-50-2e-75-a0-3e
+2022-01-21 06:35:51,596 INFO Created device 560 : 67-81-32-02-27-59
+2022-01-21 06:35:51,596 INFO Created device 561 : 77-e8-14-b9-69-ed
+2022-01-21 06:35:51,598 INFO Created device 562 : e9-d8-a4-f0-8b-22
+2022-01-21 06:35:51,598 INFO Created device 563 : 62-87-16-2a-32-6b
+2022-01-21 06:35:51,600 INFO Created device 564 : ae-2e-cf-c3-da-e0
+2022-01-21 06:35:51,601 INFO Created device 565 : f2-0c-a3-51-b1-ca
+2022-01-21 06:35:51,603 INFO Created device 566 : 0b-71-6f-4e-b1-2a
+2022-01-21 06:35:51,603 INFO Created device 567 : 7b-d7-3e-a1-17-ca
+2022-01-21 06:35:51,606 INFO Created device 568 : 24-ca-d7-86-5f-3a
+2022-01-21 06:35:51,606 INFO Created device 569 : be-88-96-cd-b9-a3
+2022-01-21 06:35:51,608 INFO Created device 570 : f7-a9-60-21-f2-50
+2022-01-21 06:35:51,609 INFO Created device 571 : 1a-7c-b3-35-af-fd
+2022-01-21 06:35:51,610 INFO Created device 572 : 4f-8b-a4-59-a0-2c
+2022-01-21 06:35:51,611 INFO Created device 573 : 97-0b-f3-9b-a4-fc
+2022-01-21 06:35:51,613 INFO Created device 574 : 0b-c7-1b-1f-2d-5e
+2022-01-21 06:35:51,613 INFO Created device 575 : 38-a6-5c-2c-8e-ca
+2022-01-21 06:35:51,615 INFO Created device 576 : c7-57-13-87-8c-23
+2022-01-21 06:35:51,617 INFO Created device 577 : ea-55-80-20-b0-8e
+2022-01-21 06:35:51,618 INFO Created device 578 : d1-4e-0c-76-87-99
+2022-01-21 06:35:51,620 INFO Created device 579 : e3-fa-96-52-5d-d2
+2022-01-21 06:35:51,627 INFO Created device 580 : bc-d3-c8-d4-05-e3
+2022-01-21 06:35:51,627 INFO Created device 581 : 42-68-c5-c9-0b-45
+2022-01-21 06:35:51,629 INFO Created device 582 : 94-cf-e7-d1-c7-4d
+2022-01-21 06:35:51,629 INFO Created device 583 : 8d-20-96-ab-78-22
+2022-01-21 06:35:51,631 INFO Created device 584 : 04-19-97-b9-1d-d4
+2022-01-21 06:35:51,632 INFO Created device 585 : c2-a1-e9-43-df-3e
+2022-01-21 06:35:51,634 INFO Created device 586 : e6-6a-45-8f-a2-fa
+2022-01-21 06:35:51,634 INFO Created device 587 : a2-19-b2-35-05-21
+2022-01-21 06:35:51,637 INFO Created device 588 : 07-6f-37-a6-4f-0a
+2022-01-21 06:35:51,638 INFO Created device 589 : 85-34-6a-d6-27-13
+2022-01-21 06:35:51,640 INFO Created device 590 : fa-17-22-09-62-67
+2022-01-21 06:35:51,640 INFO Created device 591 : 6d-6d-3f-c9-69-f8
+2022-01-21 06:35:51,642 INFO Created device 592 : 8d-bd-be-71-de-90
+2022-01-21 06:35:51,643 INFO Created device 593 : 21-25-35-cc-42-49
+2022-01-21 06:35:51,645 INFO Created device 594 : a3-18-ba-07-c2-0a
+2022-01-21 06:35:51,645 INFO Created device 595 : 0c-cb-92-ef-ca-27
+2022-01-21 06:35:51,647 INFO Created device 596 : 65-b3-43-f2-fb-10
+2022-01-21 06:35:51,648 INFO Created device 597 : 44-ad-4c-dd-41-35
+2022-01-21 06:35:51,650 INFO Created device 598 : a2-ad-02-bb-84-18
+2022-01-21 06:35:51,651 INFO Created device 599 : d5-38-14-aa-0f-72
+2022-01-21 06:35:51,653 INFO Created device 600 : 62-f1-aa-c7-0e-de
+2022-01-21 06:35:51,653 INFO Created device 601 : 0a-f1-54-98-13-2a
+2022-01-21 06:35:51,655 INFO Created device 602 : 98-54-1e-64-a1-9a
+2022-01-21 06:35:51,655 INFO Created device 603 : 2c-32-da-eb-c9-df
+2022-01-21 06:35:51,657 INFO Created device 604 : 51-e4-36-9d-04-e2
+2022-01-21 06:35:51,658 INFO Created device 605 : 1a-a8-cd-68-ac-32
+2022-01-21 06:35:51,660 INFO Created device 606 : 55-dd-a6-0a-03-eb
+2022-01-21 06:35:51,661 INFO Created device 607 : 2b-cc-e8-97-20-7e
+2022-01-21 06:35:51,663 INFO Created device 608 : 7d-ac-ea-60-0d-3d
+2022-01-21 06:35:51,663 INFO Created device 609 : 81-5e-5c-41-1e-71
+2022-01-21 06:35:51,665 INFO Created device 610 : 49-b4-80-16-db-6d
+2022-01-21 06:35:51,665 INFO Created device 611 : 3e-6d-2e-4d-58-8f
+2022-01-21 06:35:51,668 INFO Created device 612 : d6-79-68-bf-9a-f0
+2022-01-21 06:35:51,670 INFO Created device 613 : 3f-e7-1e-68-a9-5c
+2022-01-21 06:35:51,676 INFO Created device 614 : 53-83-49-68-11-64
+2022-01-21 06:35:51,677 INFO Created device 615 : b9-49-0a-a5-54-2a
+2022-01-21 06:35:51,680 INFO Looking up (37.386, -122.083, 1642744800) OpenWeather
+2022-01-21 06:35:51,427 INFO Looking up (43.693, -79.403, 1642744800) OpenWeather
+2022-01-21 06:35:51,307 INFO Looking up (45.415, -75.705, 1642744800) OpenWeather
+2022-01-21 06:35:51,945 INFO Looking up (45.414, -75.698, 1642744800) OpenWeather
+2022-01-21 06:35:51,628 INFO Looking up (49.798, -97.193, 1642744800) OpenWeather
+2022-01-21 06:35:51,303 INFO Looking up (51.053, -114.086, 1642744800) OpenWeather
+2022-01-21 06:35:51,091 INFO Looking up (49.271, -123.106, 1642744800) OpenWeather
+2022-01-21 06:35:51,749 INFO Looking up (51.369, -0.099, 1642744800) OpenWeather
+2022-01-21 06:35:51,504 INFO Looking up (50.152, -5.097, 1642744800) OpenWeather
+2022-01-21 06:35:51,315 INFO Looking up (51.888, -0.513, 1642744800) OpenWeather
+2022-01-21 06:35:51,094 INFO Looking up (51.6, -1.66, 1642744800) OpenWeather
+2022-01-21 06:35:51,764 INFO comms.py: comms going offline for device 19-f2-8a-0e-3f-08
+2022-01-21 06:35:51,765 INFO comms.py: comms going offline for device 47-e2-83-e2-a6-7b
+2022-01-21 06:35:51,766 INFO comms.py: comms going offline for device 99-f3-d1-d0-28-4a
+2022-01-21 06:35:51,766 INFO comms.py: comms going offline for device 6f-3f-64-f5-64-14
+2022-01-21 06:35:51,767 INFO comms.py: comms going offline for device 61-b3-5a-d8-56-f2
+2022-01-21 06:35:51,768 INFO comms.py: comms going offline for device 96-b0-87-29-dc-b3
+2022-01-21 06:35:51,769 INFO comms.py: comms going offline for device fc-f5-25-12-a8-41
+2022-01-21 06:35:51,769 INFO comms.py: comms going offline for device 40-59-89-5a-7f-b5
+2022-01-21 06:35:51,770 INFO comms.py: comms going offline for device a8-44-fa-04-38-76
+2022-01-21 06:35:51,770 INFO comms.py: comms going offline for device 86-1e-29-ad-b6-6b
+2022-01-21 06:35:51,771 INFO comms.py: comms going offline for device 1c-55-b5-8f-43-9d
+2022-01-21 06:35:51,772 INFO comms.py: comms going offline for device 1f-47-4a-fc-cc-2b
+2022-01-21 06:35:51,772 INFO comms.py: comms going offline for device 7d-f2-a7-76-68-55
+2022-01-21 06:35:51,773 INFO comms.py: comms going offline for device a8-53-95-a4-15-26
+2022-01-21 06:35:51,773 INFO comms.py: comms going offline for device a4-94-f0-69-30-aa
+2022-01-21 06:35:51,774 INFO comms.py: comms going offline for device 77-e8-14-b9-69-ed
+2022-01-21 06:35:51,774 INFO comms.py: comms going offline for device 1a-7c-b3-35-af-fd
+2022-01-21 06:35:51,774 INFO comms.py: comms going offline for device c2-a1-e9-43-df-3e
+2022-01-21 06:35:51,775 INFO comms.py: comms going offline for device 44-ad-4c-dd-41-35
+2022-01-21 06:35:51,775 INFO comms.py: comms going offline for device 0a-f1-54-98-13-2a
+2022-01-21 07:02:48,873 INFO comms.py: comms going offline for device 94-f6-ee-85-e7-f8
+2022-01-21 07:19:24,904 INFO comms.py: comms coming back online for device 94-f6-ee-85-e7-f8
+2022-01-21 07:29:56,937 INFO comms.py: comms going offline for device ac-f4-5c-98-66-fd
+2022-01-21 07:35:51,964 INFO Looking up (37.386, -122.083, 1642748400) OpenWeather
+2022-01-21 07:35:51,615 INFO Looking up (43.693, -79.403, 1642748400) OpenWeather
+2022-01-21 07:35:51,285 INFO Looking up (45.415, -75.705, 1642748400) OpenWeather
+2022-01-21 07:35:51,002 INFO Looking up (45.414, -75.698, 1642748400) OpenWeather
+2022-01-21 07:35:51,158 WARNING (Dark Sky took 7.156009197235107s to fetch and 0.0s to process)
+2022-01-21 07:35:51,161 INFO Looking up (49.798, -97.193, 1642748400) OpenWeather
+2022-01-21 07:35:51,821 INFO Looking up (51.053, -114.086, 1642748400) OpenWeather
+2022-01-21 07:35:51,395 INFO Looking up (49.271, -123.106, 1642748400) OpenWeather
+2022-01-21 07:35:51,060 INFO Looking up (51.369, -0.099, 1642748400) OpenWeather
+2022-01-21 07:35:51,681 INFO Looking up (50.152, -5.097, 1642748400) OpenWeather
+2022-01-21 07:35:51,295 INFO Looking up (51.888, -0.513, 1642748400) OpenWeather
+2022-01-21 07:35:51,064 INFO Looking up (51.6, -1.66, 1642748400) OpenWeather
+2022-01-21 07:50:51,764 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-21 08:05:51,806 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-21 08:35:51,911 INFO Looking up (37.386, -122.083, 1642752000) OpenWeather
+2022-01-21 08:35:51,538 INFO Looking up (43.693, -79.403, 1642752000) OpenWeather
+2022-01-21 08:35:51,165 INFO Looking up (45.415, -75.705, 1642752000) OpenWeather
+2022-01-21 08:35:51,794 INFO Looking up (45.414, -75.698, 1642752000) OpenWeather
+2022-01-21 08:35:51,509 INFO Looking up (49.798, -97.193, 1642752000) OpenWeather
+2022-01-21 08:35:51,192 INFO Looking up (51.053, -114.086, 1642752000) OpenWeather
+2022-01-21 08:35:51,780 INFO Looking up (49.271, -123.106, 1642752000) OpenWeather
+2022-01-21 08:35:51,530 INFO Looking up (51.369, -0.099, 1642752000) OpenWeather
+2022-01-21 08:35:51,167 INFO Looking up (50.152, -5.097, 1642752000) OpenWeather
+2022-01-21 08:35:51,779 INFO Looking up (51.888, -0.513, 1642752000) OpenWeather
+2022-01-21 08:35:51,429 INFO Looking up (51.6, -1.66, 1642752000) OpenWeather
+2022-01-21 08:59:47,163 INFO comms.py: comms coming back online for device c2-a1-e9-43-df-3e
+2022-01-21 09:18:09,201 INFO comms.py: comms coming back online for device 1f-47-4a-fc-cc-2b
+2022-01-21 09:30:24,243 INFO comms.py: comms going offline for device 94-f6-ee-85-e7-f8
+2022-01-21 09:35:51,274 INFO Looking up (37.386, -122.083, 1642755600) OpenWeather
+2022-01-21 09:35:51,922 INFO Looking up (43.693, -79.403, 1642755600) OpenWeather
+2022-01-21 09:35:51,575 INFO Looking up (45.415, -75.705, 1642755600) OpenWeather
+2022-01-21 09:35:51,246 INFO Looking up (45.414, -75.698, 1642755600) OpenWeather
+2022-01-21 09:35:51,928 INFO Looking up (49.798, -97.193, 1642755600) OpenWeather
+2022-01-21 09:35:51,533 INFO Looking up (51.053, -114.086, 1642755600) OpenWeather
+2022-01-21 09:35:51,160 INFO Looking up (49.271, -123.106, 1642755600) OpenWeather
+2022-01-21 09:35:51,831 INFO Looking up (51.369, -0.099, 1642755600) OpenWeather
+2022-01-21 09:35:51,514 INFO Looking up (50.152, -5.097, 1642755600) OpenWeather
+2022-01-21 09:35:51,143 INFO Looking up (51.888, -0.513, 1642755600) OpenWeather
+2022-01-21 09:35:51,821 INFO Looking up (51.6, -1.66, 1642755600) OpenWeather
+2022-01-21 10:02:24,698 INFO comms.py: comms coming back online for device 61-b3-5a-d8-56-f2
+2022-01-21 10:25:45,842 INFO comms.py: comms coming back online for device 1a-7c-b3-35-af-fd
+2022-01-21 10:35:51,882 INFO Looking up (37.386, -122.083, 1642759200) OpenWeather
+2022-01-21 10:35:51,516 INFO Looking up (43.693, -79.403, 1642759200) OpenWeather
+2022-01-21 10:35:51,183 INFO Looking up (45.415, -75.705, 1642759200) OpenWeather
+2022-01-21 10:35:51,814 INFO Looking up (45.414, -75.698, 1642759200) OpenWeather
+2022-01-21 10:35:51,568 INFO Looking up (49.798, -97.193, 1642759200) OpenWeather
+2022-01-21 10:35:51,250 INFO Looking up (51.053, -114.086, 1642759200) OpenWeather
+2022-01-21 10:35:51,940 INFO Looking up (49.271, -123.106, 1642759200) OpenWeather
+2022-01-21 10:35:51,704 INFO Looking up (51.369, -0.099, 1642759200) OpenWeather
+2022-01-21 10:35:51,374 INFO Looking up (50.152, -5.097, 1642759200) OpenWeather
+2022-01-21 10:35:51,097 INFO Looking up (51.888, -0.513, 1642759200) OpenWeather
+2022-01-21 10:35:51,759 INFO Looking up (51.6, -1.66, 1642759200) OpenWeather
+2022-01-21 10:39:57,510 INFO comms.py: comms going offline for device 91-c9-63-8a-d5-d4
+2022-01-21 10:45:08,512 INFO comms.py: comms going offline for device 3f-e7-1e-68-a9-5c
+2022-01-21 10:50:53,609 INFO comms.py: comms coming back online for device 77-e8-14-b9-69-ed
+2022-01-21 10:54:12,610 INFO comms.py: comms coming back online for device 3f-e7-1e-68-a9-5c
+2022-01-21 11:05:51,625 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-21 11:35:51,824 INFO Looking up (37.386, -122.083, 1642762800) OpenWeather
+2022-01-21 11:35:51,579 INFO Looking up (43.693, -79.403, 1642762800) OpenWeather
+2022-01-21 11:35:51,235 INFO Looking up (45.415, -75.705, 1642762800) OpenWeather
+2022-01-21 11:35:51,010 INFO Looking up (45.414, -75.698, 1642762800) OpenWeather
+2022-01-21 11:35:51,641 INFO Looking up (49.798, -97.193, 1642762800) OpenWeather
+2022-01-21 11:35:51,378 INFO Looking up (51.053, -114.086, 1642762800) OpenWeather
+2022-01-21 11:35:51,066 INFO Looking up (49.271, -123.106, 1642762800) OpenWeather
+2022-01-21 11:35:51,707 INFO Looking up (51.369, -0.099, 1642762800) OpenWeather
+2022-01-21 11:35:51,351 INFO Looking up (50.152, -5.097, 1642762800) OpenWeather
+2022-01-21 11:35:51,035 INFO Looking up (51.888, -0.513, 1642762800) OpenWeather
+2022-01-21 11:35:51,724 INFO Looking up (51.6, -1.66, 1642762800) OpenWeather
+2022-01-21 12:35:51,652 INFO Looking up (37.386, -122.083, 1642766400) OpenWeather
+2022-01-21 12:35:51,328 INFO Looking up (43.693, -79.403, 1642766400) OpenWeather
+2022-01-21 12:35:51,964 INFO Looking up (45.415, -75.705, 1642766400) OpenWeather
+2022-01-21 12:35:51,611 INFO Looking up (45.414, -75.698, 1642766400) OpenWeather
+2022-01-21 12:35:51,267 INFO Looking up (49.798, -97.193, 1642766400) OpenWeather
+2022-01-21 12:35:51,930 INFO Looking up (51.053, -114.086, 1642766400) OpenWeather
+2022-01-21 12:35:51,613 INFO Looking up (49.271, -123.106, 1642766400) OpenWeather
+2022-01-21 12:35:51,335 INFO Looking up (51.369, -0.099, 1642766400) OpenWeather
+2022-01-21 12:35:51,048 INFO Looking up (50.152, -5.097, 1642766400) OpenWeather
+2022-01-21 12:35:51,757 INFO Looking up (51.888, -0.513, 1642766400) OpenWeather
+2022-01-21 12:35:51,416 INFO Looking up (51.6, -1.66, 1642766400) OpenWeather
+2022-01-21 13:22:20,325 INFO comms.py: comms going offline for device 16-8e-94-8d-d6-0b
+2022-01-21 13:35:51,365 INFO Looking up (37.386, -122.083, 1642770000) OpenWeather
+2022-01-21 13:35:51,942 INFO Looking up (43.693, -79.403, 1642770000) OpenWeather
+2022-01-21 13:35:51,586 INFO Looking up (45.415, -75.705, 1642770000) OpenWeather
+2022-01-21 13:35:51,286 INFO Looking up (45.414, -75.698, 1642770000) OpenWeather
+2022-01-21 13:35:51,915 INFO Looking up (49.798, -97.193, 1642770000) OpenWeather
+2022-01-21 13:35:51,678 INFO Looking up (51.053, -114.086, 1642770000) OpenWeather
+2022-01-21 13:35:51,313 INFO Looking up (49.271, -123.106, 1642770000) OpenWeather
+2022-01-21 13:35:51,900 INFO Looking up (51.369, -0.099, 1642770000) OpenWeather
+2022-01-21 13:35:51,600 INFO Looking up (50.152, -5.097, 1642770000) OpenWeather
+2022-01-21 13:35:51,310 INFO Looking up (51.888, -0.513, 1642770000) OpenWeather
+2022-01-21 13:35:51,958 INFO Looking up (51.6, -1.66, 1642770000) OpenWeather
+2022-01-21 13:44:05,647 INFO comms.py: comms going offline for device 42-f1-e7-a8-d0-9a
+2022-01-21 14:31:50,821 INFO comms.py: comms going offline for device 5b-7f-2b-c2-d1-ef
+2022-01-21 14:35:51,877 INFO Looking up (37.386, -122.083, 1642773600) OpenWeather
+2022-01-21 14:35:51,490 INFO Looking up (43.693, -79.403, 1642773600) OpenWeather
+2022-01-21 14:35:51,259 INFO Looking up (45.415, -75.705, 1642773600) OpenWeather
+2022-01-21 14:35:51,898 INFO Looking up (45.414, -75.698, 1642773600) OpenWeather
+2022-01-21 14:35:51,555 INFO Looking up (49.798, -97.193, 1642773600) OpenWeather
+2022-01-21 14:35:51,237 INFO Looking up (51.053, -114.086, 1642773600) OpenWeather
+2022-01-21 14:35:51,939 INFO Looking up (49.271, -123.106, 1642773600) OpenWeather
+2022-01-21 14:35:51,615 INFO Looking up (51.369, -0.099, 1642773600) OpenWeather
+2022-01-21 14:35:51,403 INFO Looking up (50.152, -5.097, 1642773600) OpenWeather
+2022-01-21 14:35:51,260 INFO Looking up (51.888, -0.513, 1642773600) OpenWeather
+2022-01-21 14:35:51,040 INFO Looking up (51.6, -1.66, 1642773600) OpenWeather
+2022-01-21 14:43:54,777 INFO comms.py: comms going offline for device 77-e8-14-b9-69-ed
+2022-01-21 14:55:48,840 INFO comms.py: comms going offline for device 47-8a-dd-5c-81-b9
+2022-01-21 15:05:18,841 INFO comms.py: comms coming back online for device 86-1e-29-ad-b6-6b
+2022-01-21 15:35:51,959 INFO Looking up (37.386, -122.083, 1642777200) OpenWeather
+2022-01-21 15:35:51,743 INFO Looking up (43.693, -79.403, 1642777200) OpenWeather
+2022-01-21 15:35:51,449 INFO Looking up (45.415, -75.705, 1642777200) OpenWeather
+2022-01-21 15:35:51,100 INFO Looking up (45.414, -75.698, 1642777200) OpenWeather
+2022-01-21 15:35:51,785 INFO Looking up (49.798, -97.193, 1642777200) OpenWeather
+2022-01-21 15:35:51,420 INFO Looking up (51.053, -114.086, 1642777200) OpenWeather
+2022-01-21 15:35:51,120 INFO Looking up (49.271, -123.106, 1642777200) OpenWeather
+2022-01-21 15:35:51,772 INFO Looking up (51.369, -0.099, 1642777200) OpenWeather
+2022-01-21 15:35:51,425 INFO Looking up (50.152, -5.097, 1642777200) OpenWeather
+2022-01-21 15:35:51,086 INFO Looking up (51.888, -0.513, 1642777200) OpenWeather
+2022-01-21 15:35:51,692 INFO Looking up (51.6, -1.66, 1642777200) OpenWeather
+2022-01-21 16:35:51,541 INFO Looking up (37.386, -122.083, 1642780800) OpenWeather
+2022-01-21 16:35:51,161 INFO Looking up (43.693, -79.403, 1642780800) OpenWeather
+2022-01-21 16:35:51,801 INFO Looking up (45.415, -75.705, 1642780800) OpenWeather
+2022-01-21 16:35:51,486 INFO Looking up (45.414, -75.698, 1642780800) OpenWeather
+2022-01-21 16:35:51,110 INFO Looking up (49.798, -97.193, 1642780800) OpenWeather
+2022-01-21 16:35:51,761 INFO Looking up (51.053, -114.086, 1642780800) OpenWeather
+2022-01-21 16:35:51,491 INFO Looking up (49.271, -123.106, 1642780800) OpenWeather
+2022-01-21 16:35:51,144 INFO Looking up (51.369, -0.099, 1642780800) OpenWeather
+2022-01-21 16:35:51,758 INFO Looking up (50.152, -5.097, 1642780800) OpenWeather
+2022-01-21 16:35:51,396 INFO Looking up (51.888, -0.513, 1642780800) OpenWeather
+2022-01-21 16:35:51,136 INFO Looking up (51.6, -1.66, 1642780800) OpenWeather
+2022-01-21 16:41:37,876 INFO comms.py: comms coming back online for device 44-ad-4c-dd-41-35
+2022-01-21 16:50:51,881 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-21 17:35:51,009 INFO Looking up (37.386, -122.083, 1642784400) OpenWeather
+2022-01-21 17:35:51,670 INFO Looking up (43.693, -79.403, 1642784400) OpenWeather
+2022-01-21 17:35:51,324 INFO Looking up (45.415, -75.705, 1642784400) OpenWeather
+2022-01-21 17:35:51,070 INFO Looking up (45.414, -75.698, 1642784400) OpenWeather
+2022-01-21 17:35:51,713 INFO Looking up (49.798, -97.193, 1642784400) OpenWeather
+2022-01-21 17:35:51,318 INFO Looking up (51.053, -114.086, 1642784400) OpenWeather
+2022-01-21 17:35:51,977 INFO Looking up (49.271, -123.106, 1642784400) OpenWeather
+2022-01-21 17:35:51,615 INFO Looking up (51.369, -0.099, 1642784400) OpenWeather
+2022-01-21 17:35:51,244 INFO Looking up (50.152, -5.097, 1642784400) OpenWeather
+2022-01-21 17:35:51,916 INFO Looking up (51.888, -0.513, 1642784400) OpenWeather
+2022-01-21 17:35:51,565 INFO Looking up (51.6, -1.66, 1642784400) OpenWeather
+2022-01-21 17:50:51,225 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-21 18:35:51,348 INFO Looking up (37.386, -122.083, 1642788000) OpenWeather
+2022-01-21 18:35:51,007 INFO Looking up (43.693, -79.403, 1642788000) OpenWeather
+2022-01-21 18:35:51,669 INFO Looking up (45.415, -75.705, 1642788000) OpenWeather
+2022-01-21 18:35:51,324 INFO Looking up (45.414, -75.698, 1642788000) OpenWeather
+2022-01-21 18:35:51,925 INFO Looking up (49.798, -97.193, 1642788000) OpenWeather
+2022-01-21 18:35:51,600 INFO Looking up (51.053, -114.086, 1642788000) OpenWeather
+2022-01-21 18:35:51,192 INFO Looking up (49.271, -123.106, 1642788000) OpenWeather
+2022-01-21 18:35:51,844 INFO Looking up (51.369, -0.099, 1642788000) OpenWeather
+2022-01-21 18:35:51,431 INFO Looking up (50.152, -5.097, 1642788000) OpenWeather
+2022-01-21 18:35:51,137 INFO Looking up (51.888, -0.513, 1642788000) OpenWeather
+2022-01-21 18:35:51,790 INFO Looking up (51.6, -1.66, 1642788000) OpenWeather
+2022-01-21 18:42:34,450 INFO comms.py: comms coming back online for device 6f-3f-64-f5-64-14
+2022-01-21 19:22:13,558 INFO comms.py: comms coming back online for device ac-f4-5c-98-66-fd
+2022-01-21 19:22:52,558 INFO comms.py: comms coming back online for device 19-f2-8a-0e-3f-08
+2022-01-21 19:35:51,585 INFO Looking up (37.386, -122.083, 1642791600) OpenWeather
+2022-01-21 19:35:51,230 INFO Looking up (43.693, -79.403, 1642791600) OpenWeather
+2022-01-21 19:35:51,848 INFO Looking up (45.415, -75.705, 1642791600) OpenWeather
+2022-01-21 19:35:51,526 INFO Looking up (45.414, -75.698, 1642791600) OpenWeather
+2022-01-21 19:35:51,129 INFO Looking up (49.798, -97.193, 1642791600) OpenWeather
+2022-01-21 19:35:51,767 INFO Looking up (51.053, -114.086, 1642791600) OpenWeather
+2022-01-21 19:35:51,370 INFO Looking up (49.271, -123.106, 1642791600) OpenWeather
+2022-01-21 19:35:51,004 INFO Looking up (51.369, -0.099, 1642791600) OpenWeather
+2022-01-21 19:35:51,608 INFO Looking up (50.152, -5.097, 1642791600) OpenWeather
+2022-01-21 19:35:51,249 INFO Looking up (51.888, -0.513, 1642791600) OpenWeather
+2022-01-21 19:35:51,928 INFO Looking up (51.6, -1.66, 1642791600) OpenWeather
+2022-01-21 19:51:42,653 INFO comms.py: comms coming back online for device a8-53-95-a4-15-26
+2022-01-21 20:05:51,659 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-21 20:16:16,691 INFO comms.py: comms coming back online for device 7d-f2-a7-76-68-55
+2022-01-21 20:35:51,766 INFO Looking up (37.386, -122.083, 1642795200) OpenWeather
+2022-01-21 20:35:51,384 INFO Looking up (43.693, -79.403, 1642795200) OpenWeather
+2022-01-21 20:35:51,024 INFO Looking up (45.415, -75.705, 1642795200) OpenWeather
+2022-01-21 20:35:51,637 INFO Looking up (45.414, -75.698, 1642795200) OpenWeather
+2022-01-21 20:35:51,304 INFO Looking up (49.798, -97.193, 1642795200) OpenWeather
+2022-01-21 20:35:51,976 WARNING (Dark Sky took 1.6711621284484863s to fetch and 0.0009589195251464844s to process)
+2022-01-21 20:35:51,978 INFO Looking up (51.053, -114.086, 1642795200) OpenWeather
+2022-01-21 20:35:51,647 INFO Looking up (49.271, -123.106, 1642795200) OpenWeather
+2022-01-21 20:35:51,298 INFO Looking up (51.369, -0.099, 1642795200) OpenWeather
+2022-01-21 20:35:51,930 INFO Looking up (50.152, -5.097, 1642795200) OpenWeather
+2022-01-21 20:35:51,560 INFO Looking up (51.888, -0.513, 1642795200) OpenWeather
+2022-01-21 20:35:51,236 INFO Looking up (51.6, -1.66, 1642795200) OpenWeather
+2022-01-21 21:35:51,031 INFO Looking up (37.386, -122.083, 1642798800) OpenWeather
+2022-01-21 21:35:51,667 INFO Looking up (43.693, -79.403, 1642798800) OpenWeather
+2022-01-21 21:35:51,368 INFO Looking up (45.415, -75.705, 1642798800) OpenWeather
+2022-01-21 21:35:51,997 INFO Looking up (45.414, -75.698, 1642798800) OpenWeather
+2022-01-21 21:35:51,621 INFO Looking up (49.798, -97.193, 1642798800) OpenWeather
+2022-01-21 21:35:51,264 INFO Looking up (51.053, -114.086, 1642798800) OpenWeather
+2022-01-21 21:35:51,914 INFO Looking up (49.271, -123.106, 1642798800) OpenWeather
+2022-01-21 21:35:51,645 INFO Looking up (51.369, -0.099, 1642798800) OpenWeather
+2022-01-21 21:35:51,296 INFO Looking up (50.152, -5.097, 1642798800) OpenWeather
+2022-01-21 21:35:51,963 INFO Looking up (51.888, -0.513, 1642798800) OpenWeather
+2022-01-21 21:35:51,586 INFO Looking up (51.6, -1.66, 1642798800) OpenWeather
+2022-01-21 22:33:36,307 INFO comms.py: comms going offline for device 86-1e-29-ad-b6-6b
+2022-01-21 22:35:51,331 INFO Looking up (37.386, -122.083, 1642802400) OpenWeather
+2022-01-21 22:35:51,016 INFO Looking up (43.693, -79.403, 1642802400) OpenWeather
+2022-01-21 22:35:51,791 INFO Looking up (45.415, -75.705, 1642802400) OpenWeather
+2022-01-21 22:35:51,540 INFO Looking up (45.414, -75.698, 1642802400) OpenWeather
+2022-01-21 22:35:51,197 INFO Looking up (49.798, -97.193, 1642802400) OpenWeather
+2022-01-21 22:35:51,820 INFO Looking up (51.053, -114.086, 1642802400) OpenWeather
+2022-01-21 22:35:51,730 INFO Looking up (49.271, -123.106, 1642802400) OpenWeather
+2022-01-21 22:35:51,495 INFO Looking up (51.369, -0.099, 1642802400) OpenWeather
+2022-01-21 22:35:51,134 INFO Looking up (50.152, -5.097, 1642802400) OpenWeather
+2022-01-21 22:35:51,857 INFO Looking up (51.888, -0.513, 1642802400) OpenWeather
+2022-01-21 22:35:51,593 INFO Looking up (51.6, -1.66, 1642802400) OpenWeather
+2022-01-21 23:19:54,459 INFO comms.py: comms coming back online for device a4-94-f0-69-30-aa
+2022-01-21 23:20:51,465 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-21 23:35:51,538 INFO Looking up (37.386, -122.083, 1642806000) OpenWeather
+2022-01-21 23:35:51,220 INFO Looking up (43.693, -79.403, 1642806000) OpenWeather
+2022-01-21 23:35:51,885 INFO Looking up (45.415, -75.705, 1642806000) OpenWeather
+2022-01-21 23:35:51,536 INFO Looking up (45.414, -75.698, 1642806000) OpenWeather
+2022-01-21 23:35:51,181 INFO Looking up (49.798, -97.193, 1642806000) OpenWeather
+2022-01-21 23:35:51,961 INFO Looking up (51.053, -114.086, 1642806000) OpenWeather
+2022-01-21 23:35:51,646 INFO Looking up (49.271, -123.106, 1642806000) OpenWeather
+2022-01-21 23:35:51,250 INFO Looking up (51.369, -0.099, 1642806000) OpenWeather
+2022-01-21 23:35:51,835 INFO Looking up (50.152, -5.097, 1642806000) OpenWeather
+2022-01-21 23:35:51,574 INFO Looking up (51.888, -0.513, 1642806000) OpenWeather
+2022-01-21 23:35:51,218 INFO Looking up (51.6, -1.66, 1642806000) OpenWeather
+2022-01-21 23:43:32,843 INFO comms.py: comms going offline for device 06-32-1c-a6-e5-4c
+2022-01-21 23:59:45,877 INFO comms.py: comms coming back online for device 86-1e-29-ad-b6-6b
+2022-01-22 00:16:39,914 INFO comms.py: comms coming back online for device 5b-7f-2b-c2-d1-ef
+2022-01-22 00:35:51,975 INFO Looking up (37.386, -122.083, 1642809600) OpenWeather
+2022-01-22 00:35:51,614 INFO Looking up (43.693, -79.403, 1642809600) OpenWeather
+2022-01-22 00:35:51,265 INFO Looking up (45.415, -75.705, 1642809600) OpenWeather
+2022-01-22 00:35:51,929 INFO Looking up (45.414, -75.698, 1642809600) OpenWeather
+2022-01-22 00:35:51,582 INFO Looking up (49.798, -97.193, 1642809600) OpenWeather
+2022-01-22 00:35:51,207 INFO Looking up (51.053, -114.086, 1642809600) OpenWeather
+2022-01-22 00:35:51,855 INFO Looking up (49.271, -123.106, 1642809600) OpenWeather
+2022-01-22 00:35:51,051 WARNING (Dark Sky took 3.1936750411987305s to fetch and 0.0009980201721191406s to process)
+2022-01-22 00:35:51,060 INFO Looking up (51.369, -0.099, 1642809600) OpenWeather
+2022-01-22 00:35:51,762 INFO Looking up (50.152, -5.097, 1642809600) OpenWeather
+2022-01-22 00:35:51,466 INFO Looking up (51.888, -0.513, 1642809600) OpenWeather
+2022-01-22 00:35:51,103 INFO Looking up (51.6, -1.66, 1642809600) OpenWeather
+2022-01-22 01:35:51,994 INFO Looking up (37.386, -122.083, 1642813200) OpenWeather
+2022-01-22 01:35:51,628 INFO Looking up (43.693, -79.403, 1642813200) OpenWeather
+2022-01-22 01:35:51,266 INFO Looking up (45.415, -75.705, 1642813200) OpenWeather
+2022-01-22 01:35:51,018 INFO Looking up (45.414, -75.698, 1642813200) OpenWeather
+2022-01-22 01:35:51,654 INFO Looking up (49.798, -97.193, 1642813200) OpenWeather
+2022-01-22 01:35:51,273 INFO Looking up (51.053, -114.086, 1642813200) OpenWeather
+2022-01-22 01:35:51,891 INFO Looking up (49.271, -123.106, 1642813200) OpenWeather
+2022-01-22 01:35:51,498 INFO Looking up (51.369, -0.099, 1642813200) OpenWeather
+2022-01-22 01:35:51,084 INFO Looking up (50.152, -5.097, 1642813200) OpenWeather
+2022-01-22 01:35:51,778 INFO Looking up (51.888, -0.513, 1642813200) OpenWeather
+2022-01-22 01:35:51,450 INFO Looking up (51.6, -1.66, 1642813200) OpenWeather
+2022-01-22 01:47:18,147 INFO comms.py: comms going offline for device 42-68-c5-c9-0b-45
+2022-01-22 02:19:30,246 INFO comms.py: comms going offline for device 94-b2-63-4d-3e-65
+2022-01-22 02:34:25,276 INFO comms.py: comms going offline for device 87-4b-aa-d5-58-a9
+2022-01-22 02:35:07,276 INFO comms.py: comms coming back online for device 47-e2-83-e2-a6-7b
+2022-01-22 02:35:51,303 INFO Looking up (37.386, -122.083, 1642816800) OpenWeather
+2022-01-22 02:35:51,938 INFO Looking up (43.693, -79.403, 1642816800) OpenWeather
+2022-01-22 02:35:51,593 INFO Looking up (45.415, -75.705, 1642816800) OpenWeather
+2022-01-22 02:35:51,282 INFO Looking up (45.414, -75.698, 1642816800) OpenWeather
+2022-01-22 02:35:51,894 INFO Looking up (49.798, -97.193, 1642816800) OpenWeather
+2022-01-22 02:35:51,531 INFO Looking up (51.053, -114.086, 1642816800) OpenWeather
+2022-01-22 02:35:51,198 INFO Looking up (49.271, -123.106, 1642816800) OpenWeather
+2022-01-22 02:35:51,832 INFO Looking up (51.369, -0.099, 1642816800) OpenWeather
+2022-01-22 02:35:51,467 INFO Looking up (50.152, -5.097, 1642816800) OpenWeather
+2022-01-22 02:35:51,107 INFO Looking up (51.888, -0.513, 1642816800) OpenWeather
+2022-01-22 02:35:51,717 INFO Looking up (51.6, -1.66, 1642816800) OpenWeather
+2022-01-22 02:35:51,384 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-22 03:05:51,455 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-22 03:16:37,485 INFO comms.py: comms coming back online for device 96-b0-87-29-dc-b3
+2022-01-22 03:18:44,485 INFO comms.py: comms coming back online for device 1c-55-b5-8f-43-9d
+2022-01-22 03:35:51,551 INFO Looking up (37.386, -122.083, 1642820400) OpenWeather
+2022-01-22 03:35:51,286 INFO Looking up (43.693, -79.403, 1642820400) OpenWeather
+2022-01-22 03:35:51,918 INFO Looking up (45.415, -75.705, 1642820400) OpenWeather
+2022-01-22 03:35:51,549 INFO Looking up (45.414, -75.698, 1642820400) OpenWeather
+2022-01-22 03:35:51,192 INFO Looking up (49.798, -97.193, 1642820400) OpenWeather
+2022-01-22 03:35:51,822 INFO Looking up (51.053, -114.086, 1642820400) OpenWeather
+2022-01-22 03:35:51,570 INFO Looking up (49.271, -123.106, 1642820400) OpenWeather
+2022-01-22 03:35:51,174 INFO Looking up (51.369, -0.099, 1642820400) OpenWeather
+2022-01-22 03:35:51,905 INFO Looking up (50.152, -5.097, 1642820400) OpenWeather
+2022-01-22 03:35:51,565 INFO Looking up (51.888, -0.513, 1642820400) OpenWeather
+2022-01-22 03:35:51,215 INFO Looking up (51.6, -1.66, 1642820400) OpenWeather
+2022-01-22 04:04:39,006 INFO comms.py: comms going offline for device e3-fa-96-52-5d-d2
+2022-01-22 04:12:23,038 INFO comms.py: comms coming back online for device 99-f3-d1-d0-28-4a
+2022-01-22 04:35:51,106 INFO Looking up (37.386, -122.083, 1642824000) OpenWeather
+2022-01-22 04:35:51,871 INFO Looking up (43.693, -79.403, 1642824000) OpenWeather
+2022-01-22 04:35:51,500 INFO Looking up (45.415, -75.705, 1642824000) OpenWeather
+2022-01-22 04:35:51,196 INFO Looking up (45.414, -75.698, 1642824000) OpenWeather
+2022-01-22 04:35:51,813 INFO Looking up (49.798, -97.193, 1642824000) OpenWeather
+2022-01-22 04:35:51,522 INFO Looking up (51.053, -114.086, 1642824000) OpenWeather
+2022-01-22 04:35:51,127 INFO Looking up (49.271, -123.106, 1642824000) OpenWeather
+2022-01-22 04:35:51,758 INFO Looking up (51.369, -0.099, 1642824000) OpenWeather
+2022-01-22 04:35:51,401 INFO Looking up (50.152, -5.097, 1642824000) OpenWeather
+2022-01-22 04:35:51,044 INFO Looking up (51.888, -0.513, 1642824000) OpenWeather
+2022-01-22 04:35:51,832 INFO Looking up (51.6, -1.66, 1642824000) OpenWeather
+2022-01-22 05:32:24,798 INFO comms.py: comms going offline for device d6-88-d0-f6-b1-8e
+2022-01-22 05:34:20,799 INFO comms.py: comms coming back online for device 40-59-89-5a-7f-b5
+2022-01-22 05:35:51,826 INFO Looking up (37.386, -122.083, 1642827600) OpenWeather
+2022-01-22 05:35:51,449 INFO Looking up (43.693, -79.403, 1642827600) OpenWeather
+2022-01-22 05:35:51,081 INFO Looking up (45.415, -75.705, 1642827600) OpenWeather
+2022-01-22 05:35:51,806 INFO Looking up (45.414, -75.698, 1642827600) OpenWeather
+2022-01-22 05:35:51,500 INFO Looking up (49.798, -97.193, 1642827600) OpenWeather
+2022-01-22 05:35:51,177 INFO Looking up (51.053, -114.086, 1642827600) OpenWeather
+2022-01-22 05:35:51,898 INFO Looking up (49.271, -123.106, 1642827600) OpenWeather
+2022-01-22 05:35:51,570 INFO Looking up (51.369, -0.099, 1642827600) OpenWeather
+2022-01-22 05:35:51,174 INFO Looking up (50.152, -5.097, 1642827600) OpenWeather
+2022-01-22 05:35:51,923 INFO Looking up (51.888, -0.513, 1642827600) OpenWeather
+2022-01-22 05:35:51,582 INFO Looking up (51.6, -1.66, 1642827600) OpenWeather
+2022-01-22 05:35:51,958 WARNING (Dark Sky took 1.3751189708709717s to fetch and 0.0s to process)
+2022-01-22 06:04:12,028 INFO comms.py: comms going offline for device d5-6e-b2-3f-d1-29
+2022-01-22 06:35:51,120 INFO Looking up (37.386, -122.083, 1642831200) OpenWeather
+2022-01-22 06:35:51,420 WARNING (Dark Sky took 1.2999520301818848s to fetch and 0.0s to process)
+2022-01-22 06:35:51,422 INFO Looking up (43.693, -79.403, 1642831200) OpenWeather
+2022-01-22 06:35:51,018 INFO Looking up (45.415, -75.705, 1642831200) OpenWeather
+2022-01-22 06:35:51,779 INFO Looking up (45.414, -75.698, 1642831200) OpenWeather
+2022-01-22 06:35:51,488 INFO Looking up (49.798, -97.193, 1642831200) OpenWeather
+2022-01-22 06:35:51,202 INFO Looking up (51.053, -114.086, 1642831200) OpenWeather
+2022-01-22 06:35:51,869 INFO Looking up (49.271, -123.106, 1642831200) OpenWeather
+2022-01-22 06:35:51,582 INFO Looking up (51.369, -0.099, 1642831200) OpenWeather
+2022-01-22 06:35:51,196 INFO Looking up (50.152, -5.097, 1642831200) OpenWeather
+2022-01-22 06:35:51,855 INFO Looking up (51.888, -0.513, 1642831200) OpenWeather
+2022-01-22 06:35:51,535 INFO Looking up (51.6, -1.66, 1642831200) OpenWeather
+2022-01-22 07:35:51,424 INFO Looking up (37.386, -122.083, 1642834800) OpenWeather
+2022-01-22 07:35:51,130 INFO Looking up (43.693, -79.403, 1642834800) OpenWeather
+2022-01-22 07:35:51,790 INFO Looking up (45.415, -75.705, 1642834800) OpenWeather
+2022-01-22 07:35:51,491 INFO Looking up (45.414, -75.698, 1642834800) OpenWeather
+2022-01-22 07:35:51,176 INFO Looking up (49.798, -97.193, 1642834800) OpenWeather
+2022-01-22 07:35:51,815 INFO Looking up (51.053, -114.086, 1642834800) OpenWeather
+2022-01-22 07:35:51,503 INFO Looking up (49.271, -123.106, 1642834800) OpenWeather
+2022-01-22 07:35:51,142 INFO Looking up (51.369, -0.099, 1642834800) OpenWeather
+2022-01-22 07:35:51,814 INFO Looking up (50.152, -5.097, 1642834800) OpenWeather
+2022-01-22 07:35:51,484 INFO Looking up (51.888, -0.513, 1642834800) OpenWeather
+2022-01-22 07:35:51,163 INFO Looking up (51.6, -1.66, 1642834800) OpenWeather
+2022-01-22 08:05:51,943 INFO Starting new logfile OnFStest00002.json
+2022-01-22 08:20:51,962 INFO HVAC cf-e3-6f-64-42-af currently not functional, so ignored call for cool
+2022-01-22 08:25:09,003 INFO comms.py: comms going offline for device 08-7f-1a-e1-ed-97
+2022-01-22 08:35:51,045 INFO Looking up (37.386, -122.083, 1642838400) OpenWeather
+2022-01-22 08:35:51,700 INFO Looking up (43.693, -79.403, 1642838400) OpenWeather
+2022-01-22 08:35:51,358 INFO Looking up (45.415, -75.705, 1642838400) OpenWeather
+2022-01-22 08:35:51,999 INFO Looking up (45.414, -75.698, 1642838400) OpenWeather
+2022-01-22 08:35:51,616 INFO Looking up (49.798, -97.193, 1642838400) OpenWeather
+2022-01-22 08:35:51,262 INFO Looking up (51.053, -114.086, 1642838400) OpenWeather
+2022-01-22 08:35:51,857 INFO Looking up (49.271, -123.106, 1642838400) OpenWeather
+2022-01-22 08:35:51,523 INFO Looking up (51.369, -0.099, 1642838400) OpenWeather
+2022-01-22 08:35:51,135 INFO Looking up (50.152, -5.097, 1642838400) OpenWeather
+2022-01-22 08:35:51,770 INFO Looking up (51.888, -0.513, 1642838400) OpenWeather
+2022-01-22 08:35:51,391 INFO Looking up (51.6, -1.66, 1642838400) OpenWeather
+2022-01-22 09:35:51,182 INFO Looking up (37.386, -122.083, 1642842000) OpenWeather
+2022-01-22 09:35:51,798 INFO Looking up (43.693, -79.403, 1642842000) OpenWeather
+2022-01-22 09:35:51,447 INFO Looking up (45.415, -75.705, 1642842000) OpenWeather
+2022-01-22 09:35:51,093 INFO Looking up (45.414, -75.698, 1642842000) OpenWeather
+2022-01-22 09:35:51,754 INFO Looking up (49.798, -97.193, 1642842000) OpenWeather
+2022-01-22 09:35:51,157 ERROR Error at real time 2022-02-04 12:09:31.157810 (local)
+2022-01-22 09:35:51,157 ERROR Traceback (most recent call last):
+  File "D:\agreeya_codes\synth\synth\__main__.py", line 293, in main
+    engine.next_event()
+  File "D:\agreeya_codes\synth\synth\engines\sim.py", line 160, in next_event
+    fn(arg)             # Note that this is likely to itself inject more events, so we must have released lock
+  File "D:\agreeya_codes\synth\synth\devices\weather.py", line 50, in tick_weather
+    props = dark_sky.get_weather(lat, lon, int(self.engine.get_now()))
+  File "D:\agreeya_codes\synth\synth\devices\helpers\dark_sky.py", line 129, in get_weather
+    conn.request('GET', URL, None, set_headers())
+  File "C:\python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "C:\python39\lib\http\client.py", line 1448, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+  File "C:\python39\lib\ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\python39\lib\ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "C:\python39\lib\ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+
+2022-01-22 09:35:51,159 INFO Simulation ends
+2022-01-22 09:35:51,159 INFO Ending device logging (615 devices were emulated)
+2022-01-22 09:35:51,175 INFO Preparing CSV file
+2022-01-22 09:35:51,086 INFO Writing CSV file

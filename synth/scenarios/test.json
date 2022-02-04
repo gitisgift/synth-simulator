@@ -1,0 +1,44 @@
+{
+    "restart_log" : true,
+    "engine" : {
+        "type" : "sim",
+        "start_time" : "-P2D",
+        "end_time" : "now"
+    },
+   "events" : [
+       { 
+            "comment" : "Weather sensor",
+            "repeats" : 1,
+            "action" : {
+                "create_device" : {
+                    "functions" : {
+                        "weather" : {},
+                        "variable" : [
+                            { "name" : "demo", "value" : "BMS" },
+                            { "name" : "device_type", "value" : "weather_sensor" },
+                            { "name" : "latitude" , "value" : 37.386051}, { "name" : "longitude", "value" : -122.083855}  //  Mountain View, California 
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "comment" : "light bulbs",
+            "repeats" : 10,
+            "action" : {
+                "create_device" : {
+                    "functions" : {
+                        "bulb" : { "power" : [12,20,36]},
+                        "variable" : [
+                            { "name" : "demo", "value" : "BMS" },
+                            { "name" : "device_type", "value" : "bulb" },
+                            { "name" : "$x", "value" : [100,150,200,250,300,350,400,450,500,550,600,650] },
+                            { "name" : "$y", "value" : [100,125,150,175,200,225,250,275,300] },
+                            { "name" : "latitude" , "value" : 37.386051}, { "name" : "longitude", "value" : -122.083855}  //  Mountain View, California 
+                        ]
+                    }
+                }
+            }
+        }
+   ]
+}

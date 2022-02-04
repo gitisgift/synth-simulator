@@ -1,0 +1,26 @@
+{
+    "engine" :
+    {
+        "type" : "sim",
+        "start_time" : "-P30D",
+        "end_time" : "now"
+    },
+    "events" : [
+        {
+            "at" : "PT0S",
+            "comment" : "A device with a battery functions",
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "battery" : {
+                            "life_mu" : "P7D",
+                            "life_sigma" : "PT0S",
+                            "autoreplace" : true,
+                            "autoreplace_delay" : "P1D"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

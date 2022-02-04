@@ -1,0 +1,6 @@
+{
+    "client" : {
+        "type" : "filesystem",
+        "filename" : "OnFStest"
+    }
+}

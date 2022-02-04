@@ -1,0 +1,31 @@
+{
+    "restart_log" : true,
+    "engine" : {
+        "type" : "sim",
+        "start_time" : "-P30D",
+        "end_time" : "now"
+    },
+    "events" : [
+        {"action": {"client.mute" : true}},
+        {
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "variable" : {
+                            "name" : "count",
+                            "timefunction" : {
+                                "count" : {
+                                    "interval" : "PT1H"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {"at" : "end"},
+        {"action": {"bulk_upload" : { } }},
+        {"action": {"client.mute" : false }},
+        {"action": {"send_top" : { } }}
+    ]
+}

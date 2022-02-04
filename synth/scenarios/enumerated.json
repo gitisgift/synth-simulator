@@ -1,0 +1,30 @@
+{
+    "restart_log" : true,
+    "engine" : {
+        "type" : "sim",
+        "start_time" : "-P360D",
+        "end_time" : null,
+        "end_after_events" : 100000
+    },
+    "events" : [
+        {
+            "at" : "PT0S",
+            "interval" : "PT0S",
+            "repeats" : 2000,
+            "action": {
+                "create_device" : {
+                    "functions" : {
+                        "enumerated" : {
+                            "name" : "event",
+                            "values" : ["alarm", "battery low", "mains loss", "cover removed", "hardware fault", "calibration error", "sensor needs cleaning", "internal fault", "link interference", "over-temperature"],
+                            "periods" : ["P30D", "P100D",       "P10D",       "P60D",          "P360D",          "P100D",             "P200D",                 "P500D",          "P13D",              "P500D"]
+//                            "values" : ["test"],
+//                            "periods" : ["P1D"]
+                        },
+                        "latlong" : {}
+                    }
+                }
+            }
+        }
+    ]
+}
